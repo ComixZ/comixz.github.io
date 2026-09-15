@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h4>Anti-Comic-Chaos-Tool</h4>
+    <h3>v1.9.2026</h3>
+  </header>
+
+
+  <main>
+
+    <!-- ============================================================
+         Table of contents
+         ============================================================ -->
+    <section class="step" id="inhaltsverzeichnis">
+      <h2>Contents</h2>
+      <div class="description">
+        <ul style="list-style: none; ">
+		  <li><a class="weiter-btn" href="#crashkurs">0️⃣ Quick crash course</a></li>
+          <li><a class="weiter-btn" href="#kapitel1">1️⃣ Create a complete edition</a></li>
+          <li><a class="weiter-btn" href="#kapitel2">2️⃣ Create an anthology</a></li>
+          <li><a class="weiter-btn" href="#kapitel3">3️⃣ Batch - create several comics at once</a></li>
+          <li><a class="weiter-btn" href="#kapitel4">4️⃣ Create a group &amp; assign comics</a></li>
+          <li><a class="weiter-btn" href="#kapitel5">5️⃣ Check covers &amp; check thumbnails</a></li>
+          <li><a class="weiter-btn" href="#kapitel6">6️⃣ Import comics</a></li>
+          <li><a class="weiter-btn" href="#kapitel7">7️⃣ Export comics</a></li>
+	      <li><a class="weiter-btn" href="#comixz">8️⃣ Legal notice</a></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         Introduction / Important notes
+         ============================================================ -->
+    <section class="step">
+      
+      <div class="description">
+        <p>❓ "Anti-Comic-Chaos-Tool" is a small program that lets you manage your comic collection - originally made with German-language comics in mind, but it works just as well with English, French, or other languages. Whether you own 10 mangas or a complete Disney collection: with this tool you'll always know what you already have.</p>
+        <p>😁 There's nothing to install. No setup wizard, no registration, no ads. The whole folder with the program in it works just as it is - you can simply copy it onto a USB stick and keep using it on another PC.</p>
+        <p>⚠️ These 2 files and the accompanying folder must always stay together in the same directory (i.e. the same folder on your hard drive or stick):</p>
+        <ul>
+          <li>The program file: "acct.exe" (this is what you launch to open the program)</li>
+          <li>The settings file: "comic.ini" (this is where the program remembers your settings)</li>
+          <li>A folder named "DB_name of the database" - this holds all the images and the actual database file.</li>
+        </ul>
+        <p>If you create several databases (e.g. because you want to keep mangas and comics separate), the program automatically creates its own folder for each one, e.g. "DB_name of the database1", "DB_name of the database2" and so on. You don't need to worry about these - the program creates them on its own.</p>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         Crash course
+         ============================================================ -->
+    <section class="step" id="crashkurs">
+      <h2>0️⃣ Quick crash course</h2>
+      <div class="description">
+        <p>Entering and editing comics is pretty self-explanatory - the best approach is to just take a look at the input form and try things out for yourself. A few small things work a bit differently than you might be used to from other programs, though:</p>
+        
+        <ul>
+          <li>As soon as you change something anywhere and then click "OK", it's written to the database immediately and automatically. There is deliberately no "Save" or "Save As" button like you might know from Word or other programs.</li>
+          <li>Next to some input fields you'll see a small arrow ▼ on the right. Clicking it opens a list of values you've already entered into that field before (e.g. artist or writer names) - so you don't have to type everything from scratch every time, you can just click an existing entry instead. You can just as easily type something completely new into the field if the name you want isn't in the list yet.</li>
+          <li>If you add several issues of a series (e.g. Asterix issue 10 through issue 33), the program automatically groups them together in the main window under the shared name "Asterix" to keep the list tidy. To the left of such a series name you'll see a small arrow icon <img src="pfeil_blau_treeview.png" style="height: 1em; width: auto; vertical-align: middle; display: inline; margin: 0 4px;" alt="Arrow">. Click it to show or hide all the individual issues of that series.</li>
+          <li>Want to select several comics at once (e.g. to delete or edit them all in one go)? That works exactly like you're used to from Windows Explorer: hold down the CTRL key and click on each comic you want, one after another, to add or remove individual comics from the selection. Alternatively, hold down SHIFT and click the first and then the last comic in a row to select everything in between at once.</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         1) Complete edition
+         ============================================================ -->
+    <section class="step" id="kapitel1">
+      <h2>1️⃣ Create a complete edition</h2>
+      
+      <div class="description">
+          <p>A "complete edition" is a thick collected volume in which several individual issues of a series have been reprinted together (e.g. "Asterix Complete Edition: Volumes 1-3 in one book"). For the program to recognize this and match up the issues correctly, you need to mark this volume as a complete edition. This works both when creating a new entry and afterward when editing an existing one:</p>
+<img src="anleitung_gesamtausgabe_en.avif">
+          <ol>
+          <li>Open either "New Comic" (for a new entry) or "Edit Comic" (for an entry that already exists).</li>
+          <li>Find the checkbox labeled "Complete edition" and click it once, so a checkmark appears.</li>
+          <li>Now you need to specify which issues are part of this complete edition. If you've already created the individual issues in your database beforehand, click the small arrow next to the input field - a list opens from which you can simply select the matching issues. If you don't have matching entries yet, just type the name directly into the field.</li>
+          <li>Use "Add more issues" to add further issues to this complete edition, if any are still missing.</li>
+          <li>Finally, confirm with "OK" as usual so everything gets saved.</li>
+        </ol>
+       </div>
+    </section>
+
+
+    <!-- ============================================================
+         2) Anthology
+         ============================================================ -->
+    <section class="step" id="kapitel2">
+      <h2>2️⃣ Create an anthology</h2>
+     
+      <div class="description">
+          <p>An "anthology" is an issue that contains not just one, but several different stories (often by different artists/writers). So that you can later look up in your database which story is contained where, you need to mark such an issue as an anthology. This works both when creating a new entry and afterward when editing an existing one:</p>
+ <img src="anleitung_anthologie_en.avif">
+          <ol>
+          <li>Open either "New Comic" (for a new entry) or "Edit Comic" (for an entry that already exists).</li>
+          <li>Find the checkbox labeled "Anthology" and click it once, so a checkmark appears.</li>
+          <li>Enter the title of the first story into the field provided - this field is required, you can't continue without a title. Artist, writer, and page count can also be entered, but are optional.</li>
+          <li>If the same issue contains further stories, click "Add more issues" and enter the title (and optionally artist/writer/pages) of the next story the same way. Repeat this until all the stories from the issue have been recorded.</li>
+          <li>Finally, confirm with "OK" as usual so everything gets saved.</li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         3) Batch
+         ============================================================ -->
+    <section class="step" id="kapitel3">
+      <h2>3️⃣ Batch - create several comics at once</h2>
+      <div class="description">
+          <p>Say you have Asterix issue 1 through issue 10 and don't want to type them all in one by one? That's exactly what "Batch" is for. It lets you create several issues of a series all at once in one go, instead of entering each one separately via "New Comic".</p>
+      <img src="anleitung_batch_1_en.avif">
+      <img src="anleitung_batch_2_en.avif">
+
+          <ol>
+          <li>First, create a new comic as usual and fill in Series, Publisher, etc. as normal.</li>
+          <li>Find the "Batch" checkbox and check it. As soon as it's checked, a new field appears where you can enter a number range.
+          This new field has "from" and "to". For "from", enter the first issue number (e.g. 1), for "to" the last one (e.g. 10). The program then automatically creates all issues 1 through 10 for you - you don't need to type each number in individually.</li>
+          <li>So that not every issue gets the same cover image, click the button with the folder icon. This opens a new, additional window.</li>
+          <li>In this new window you'll see a list of all the issues you're currently creating (e.g. issue 1 through issue 10). Click the matching spot for each individual issue and choose its cover image, and enter title and ISBN. Do this once for each issue, until they all have their own cover.</li>
+          <li>Once you're done, confirm with "OK" (as usual) - only then are all the issues actually saved to the database.</li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         5) Create & assign group
+         ============================================================ -->
+    <section class="step" id="kapitel4">
+      <h2>4️⃣ Create a group &amp; assign comics</h2>
+      <div class="description">
+        <p>⚠️ Important: "Create group" only creates an empty placeholder - no comics are assigned to it yet. That's a second, separate step afterward.</p>
+        <p>A group brings together several series that belong together in content (e.g. a main series plus spin-offs), and is also the place where you can store slipcase, figure, and artwork images that belong to the whole group rather than to a single issue.</p>
+
+        <p class="note">Step 1: Create the group</p>
+		<img src="anleitung_gruppe_1_en.avif">
+        <ol>
+          <li>Click "More" in the toolbar.</li>
+          <li>Click "Create group".</li>
+          <li>Enter the desired name (e.g. "Asterix").</li>
+          <li>Click OK.</li>
+        </ol>
+        <p>That's it for this step - the group now exists, but is still completely empty. Not a single issue is attached to it yet.</p>
+
+        <p class="note">Step 2: Assign comics to the group</p>
+        <p>For a comic to actually belong to this group, you need to enter this for each individual issue - or you can select several issues beforehand:</p>
+		<img src="anleitung_gruppe_2_en.avif">
+        <ol>
+          <li>Open the issue via "Edit".</li>
+          <li>In the "Group" field, use the dropdown list to select the name you assigned in step 1.</li>
+          <li>Save with OK.</li>
+        </ol>
+        <p>Repeat this for every issue that should belong to the group. The issue's "Series" (i.e. what it's called on the cover) stays unchanged - only the group assignment changes.</p>
+
+        <p class="note">What changes as a result</p>
+        <ul>
+          <li>In the table, all issues sharing the same group are now shown together under one group header (e.g. "Asterix (10 issues)"), even if they have different series names.</li>
+		  <li>Clicking "Edit" on this group header opens "Edit series" - there you can additionally upload slipcase, figure, and artwork images for the whole group.</li>
+        </ul>
+          <img src="anleitung_gruppe_3_en.avif">
+
+        <p>💡 In short: "Create group" just makes the empty folder. The issues then need to be placed into it individually via their own "Group" field.</p>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         6) Check covers & check thumbnails
+         ============================================================ -->
+    <section class="step" id="kapitel5">
+      <h2>5️⃣ Check covers &amp; check thumbnails</h2>
+      <div class="description">
+        <p>This is where you find and clean up issues in your database's cover folder - leftover images, covers saved more than once, and comics that are still missing an image.</p>
+        <p>Open: <strong>Menu/Databases → Check covers</strong></p>
+        <p>The window has three tabs at the top that you can switch between.</p>
+
+        <p class="note">Tab 1 - Find unused covers</p>
+        <p>Shows images that are stored in the cover folder but no longer belong to any comic (e.g. because the comic was deleted but the image was left behind).</p>
+        <ol>
+          <li>Open the "Find unused covers" tab (already selected by default).</li>
+          <li>You'll see a list of the images found, with a small preview.</li>
+          <li>Check the images you want to delete.</li>
+          <li>Click "Delete".</li>
+        </ol>
+        <p>👍 If it says "No unused covers" with a thumbs-up icon, everything is clean - nothing to do.</p>
+
+        <p class="note">Tab 2 - Find duplicate covers</p>
+        <p>Shows images that are stored more than once in the cover folder (under different filenames, but identical or very similar in content).</p>
+
+        <p class="note">The sensitivity slider (similarity detection)</p>
+        <p>The program automatically compares all your cover images with each other and tries to figure out which ones are actually the same image. The "Sensitivity" slider determines how exact this comparison needs to be for two images to count as "the same".</p>
+        <ul>
+          <li><strong>Slider far left (low value, strict):</strong> Only counts as "the same" if the images are really almost pixel-identical. Fewer, but very reliable matches - some genuine duplicates (e.g. slightly differently cropped or compressed) get missed this way, though.</li>
+          <li><strong>Slider far right (high value, generous):</strong> Already counts as "the same" if the images are only roughly similar. More matches - but this raises the risk that actually different covers get incorrectly flagged as "the same".</li>
+        </ul>
+        <p>There's no "correct" value - it depends on what your covers look like. Move the slider and watch how the list of matches below adjusts immediately.</p>
+        <p>💡 If a comic name is shown next to an image, it belongs to that comic - you generally shouldn't delete it. If no name is shown next to it, it doesn't belong to any comic and can usually be deleted safely.</p>
+        <ol>
+          <li>Open the "Find duplicate covers" tab.</li>
+          <li>Adjust the sensitivity if needed.</li>
+          <li>Look through the groups found - check each image individually via the preview to see whether it's really a duplicate.</li>
+          <li>Only check what you actually want to delete.</li>
+          <li>Click "Delete".</li>
+        </ol>
+        <p>⚠️ Check whether the covers are really identical before deleting! The automatic detection can be wrong, especially with covers that have a similar frame/layout but different content - the slider is only an aid, not a guarantee.</p>
+
+        <p class="note">Tab 3 - Comics without a cover</p>
+        <p>Shows comics in your database that don't have any image assigned yet (you can spot them in the normal table by the camera icon instead of a cover). You can't delete anything directly here - the list is for an overview only. Click an entry to edit that comic and add an image there.</p>
+
+        <p class="note">Check thumbnails</p>
+        <p>Cover images can be several MB in size - the more of them there are, the longer loading takes. That's why the program automatically creates small, fast-loading copies ("thumbnails"). This normally happens on its own, and you usually don't need to worry about it.</p>
+        <p>If something did go wrong at some point (e.g. after a crash or manual changes in the file system), "Check thumbnails" checks whether a thumbnail copy really exists for every cover, and creates any missing ones automatically.</p>
+        <p>Open: <strong>Menu/Databases → Check thumbnails</strong></p>
+        <ol>
+          <li>Click "Check".</li>
+          <li>The program goes through all covers in the background (this can take a moment if you have many comics).</li>
+          <li>Missing thumbnails are recreated automatically.</li>
+        </ol>
+        <p>💡 What happens if a thumbnail is missing? Nothing bad - the app still works fine, images just load a bit more slowly until you run this feature once.</p>
+
+        <p>💡 In short: "Check covers" cleans up the image folder, "Check thumbnails" repairs the fast preview images - you can safely run both every now and then, but with "Find duplicate covers" you should always take a look yourself before deleting.</p>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         7) Import comics
+         ============================================================ -->
+    <section class="step" id="kapitel6">
+      <h2>6️⃣ Import comics</h2>
+      <div class="description">
+        <p>This is where you bring comics from another database into your currently open database.</p>
+
+        <p class="note">Step 1: Open the window</p>
+        <ol>
+          <li>Click "More" in the toolbar.</li>
+          <li>Click "Import comics".</li>
+        </ol>
+
+        <p class="note">Step 2: Select a file</p>
+        <p>You'll see a list of all the other databases that were found. Click the name of the database you want to bring comics from - it gets highlighted.</p>
+
+        <p class="note">Step 3: Confirm</p>
+        <p>As soon as a file is selected, the OK button appears. Click it.</p>
+
+        <p class="note">What happens next</p>
+        <ul>
+          <li>All comics from the selected file are brought into your current database.</li>
+          <li>Comics that exactly match a comic that already exists in content are not imported twice.</li>
+          <li>Related images (cover, art print, slipcase, figures, artwork) are automatically brought over too.</li>
+          <li>A results window shows you at the end how many comics were brought over and how many were skipped as duplicates.</li>
+        </ul>
+        <p>💡 The other database stays unchanged in the process - only copies are brought into your current database, nothing is removed from the source file.</p>
+
+        <p>💡 In short: "Import comics" is a one-way street into your current database - safe to try out, since the source file is never changed.</p>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         8) Export comics
+         ============================================================ -->
+    <section class="step" id="kapitel7">
+      <h2>7️⃣ Export comics</h2>
+      <div class="description">
+        <p>This is where you copy (or move) a selection of your comics into another database - either a newly created one or one that already exists.</p>
+
+        <p class="note">Step 1: Select comics</p>
+        <p>In the table, select the comics you want to export. The "Export comics" button (under "More") only becomes clickable once at least one comic is selected.</p>
+
+        <p class="note">Step 2: Choose a destination</p>
+        <ul>
+          <li><strong>New file:</strong> A completely new database is created, containing only the selected comics. You give it a name.</li>
+          <li><strong>Existing database:</strong> The selected comics are added to a database that already exists. You choose the destination file from a list.</li>
+        </ul>
+
+        <p class="note">Step 3: Choose Copy or Move</p>
+        <ul>
+          <li><strong>Copy (default):</strong> The comics also end up in the destination database - they stay unchanged in your current database.</li>
+          <li><strong>Move:</strong> The comics are transferred to the destination database and removed from your current database. Related images are moved along with them (not kept as duplicates) - unless another remaining comic still uses exactly the same image (e.g. a shared collected-edition cover), in which case it's kept just to be safe.</li>
+        </ul>
+
+        <p class="note">Step 4: Confirm</p>
+        <p>Click OK.</p>
+
+      </div>
+    </section>
+
+
+
+
+    <!-- ============================================================
+         License / Disclaimer / Contact
+         ============================================================ -->
+    <section class="step" id="comixz">
+	<h2>8️⃣ Legal notice</h2>
+      <div class="description">
+
+        <p class="note">License:</p>
+        <p>
+          This software is free and may be used, copied, and
+          redistributed by anyone.
+        </p>
+        <p>
+          Commercial use is not permitted. Only private, personal,
+          and non-commercial purposes are allowed (e.g. managing
+          your own collection, personal use, sharing with
+          friends/acquaintances).
+        </p>
+        <p>
+          Licensed under the PolyForm Noncommercial License 1.0.0.
+        </p>
+
+        <p class="note">Disclaimer:</p>
+        <p>
+          This software is provided "as is", without any warranty
+          whatsoever. The author assumes no liability for:
+        </p>
+        <ul>
+          <li>Data loss or data corruption</li>
+          <li>Damage to the system or hardware</li>
+          <li>direct, indirect, or consequential damages of any kind,</li>
+        </ul>
+        <p>
+          arising from the use or operation of this
+          software.
+        </p>
+        <p>
+          Use is at your own risk and responsibility. It is
+          strongly recommended to back up important data before
+          use.
+        </p>
+
+        <p class="note">Copyright: </p><p> -=ComixZ=-</p><br>
+        <p class="note">eMail: </p><p> comixz@tuta.io</p><br>
+        <p class="note">current version: </p><p> https://github.com/ComixZ/Anti-Comic-Chaos-Tool</p>
+
+      </div>
+    </section>
+
+  </main>
+
+
+ <footer>
+    <h1 class="brand">-=ComixZ=-</h1>
+     <div class="logo-frame">
+      <!-- AUTOPLAY REMOVED HERE -->
+      <video src="comixz_logo_film.mp4" muted disablePictureInPicture></video>
+    </div>
+  </footer>
+     <br>
+  
+   
+
+
+<script src="style.js"></script>
+</body>
+</html>

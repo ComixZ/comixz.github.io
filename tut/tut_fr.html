@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide rapide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h4>Anti-Comic-Chaos-Tool</h4>
+    <h3>v1.9.2026</h3>
+  </header>
+
+
+  <main>
+
+    <!-- ============================================================
+         Sommaire
+         ============================================================ -->
+    <section class="step" id="inhaltsverzeichnis">
+      <h2>Sommaire</h2>
+      <div class="description">
+        <ul style="list-style: none; ">
+		  <li><a class="weiter-btn" href="#crashkurs">0️⃣ Cours accéléré</a></li>
+          <li><a class="weiter-btn" href="#kapitel1">1️⃣ Créer une édition intégrale</a></li>
+          <li><a class="weiter-btn" href="#kapitel2">2️⃣ Créer une anthologie</a></li>
+          <li><a class="weiter-btn" href="#kapitel3">3️⃣ Lot - créer plusieurs comics à la fois</a></li>
+          <li><a class="weiter-btn" href="#kapitel4">4️⃣ Créer un groupe &amp; y associer des comics</a></li>
+          <li><a class="weiter-btn" href="#kapitel5">5️⃣ Vérifier les couvertures &amp; les vignettes</a></li>
+          <li><a class="weiter-btn" href="#kapitel6">6️⃣ Importer des comics</a></li>
+          <li><a class="weiter-btn" href="#kapitel7">7️⃣ Exporter des comics</a></li>
+	      <li><a class="weiter-btn" href="#comixz">8️⃣ Mentions légales</a></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         Introduction / Remarques importantes
+         ============================================================ -->
+    <section class="step">
+      
+      <div class="description">
+        <p>❓ « Anti-Comic-Chaos-Tool » est un petit programme qui vous permet de gérer votre collection de comics - conçu à l'origine pour les comics en langue allemande, mais il fonctionne tout aussi bien avec des comics en anglais, en français ou dans d'autres langues. Que vous possédiez 10 mangas ou une collection Disney complète : avec cet outil, vous saurez toujours ce que vous possédez déjà.</p>
+        <p>😁 Rien à installer. Pas d'assistant d'installation, pas d'inscription, pas de publicité. Le dossier complet contenant le programme fonctionne tel quel - vous pouvez donc aussi simplement le copier sur une clé USB et continuer à l'utiliser sur un autre PC.</p>
+        <p>⚠️ Ces 2 fichiers et le dossier correspondant doivent toujours rester ensemble dans le même répertoire (c'est-à-dire le même dossier sur le disque dur ou la clé) :</p>
+        <ul>
+          <li>Le fichier du programme : « acct.exe » (c'est ce que vous lancez pour ouvrir le programme)</li>
+          <li>Le fichier de paramètres : « comic.ini » (c'est là que le programme mémorise vos réglages)</li>
+          <li>Un dossier nommé « DB_nom de la base de données » - il contient toutes les images ainsi que le fichier de la base de données proprement dit.</li>
+        </ul>
+        <p>Si vous créez plusieurs bases de données (par exemple parce que vous voulez séparer mangas et comics), le programme crée automatiquement un dossier propre à chacune, par ex. « DB_nom de la base de données1 », « DB_nom de la base de données2 » et ainsi de suite. Vous n'avez pas à vous en occuper vous-même, le programme les crée tout seul.</p>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         Cours accéléré
+         ============================================================ -->
+    <section class="step" id="crashkurs">
+      <h2>0️⃣ Cours accéléré</h2>
+      <div class="description">
+        <p>Saisir et modifier des comics est en fait assez intuitif - le mieux est de simplement regarder le formulaire de saisie et d'essayer par vous-même. Quelques petites choses fonctionnent toutefois un peu différemment de ce à quoi vous êtes peut-être habitué avec d'autres programmes :</p>
+        
+        <ul>
+          <li>Dès que vous modifiez quelque chose quelque part puis cliquez sur « OK », c'est immédiatement et automatiquement écrit dans la base de données. Il n'y a volontairement pas de bouton « Enregistrer » ou « Enregistrer sous » comme vous en connaissez peut-être dans Word ou d'autres programmes.</li>
+          <li>À côté de certains champs de saisie, vous verrez une petite flèche ▼ sur la droite. En cliquant dessus, une liste s'ouvre avec les valeurs déjà saisies dans ce champ auparavant (par ex. noms de dessinateurs ou de scénaristes) - vous n'avez donc pas besoin de tout retaper à chaque fois, vous pouvez simplement cliquer sur une entrée existante. Vous pouvez tout aussi bien taper quelque chose de complètement nouveau dans le champ si le nom souhaité ne figure pas encore dans la liste.</li>
+          <li>Si vous ajoutez plusieurs numéros d'une série (par ex. Astérix numéro 10 à 33), le programme les regroupe automatiquement dans la fenêtre principale sous le nom commun « Astérix » afin que la liste reste claire. À gauche d'un tel nom de série, vous verrez une petite icône en forme de flèche <img src="pfeil_blau_treeview.png" style="height: 1em; width: auto; vertical-align: middle; display: inline; margin: 0 4px;" alt="Flèche">. Cliquez dessus pour afficher ou masquer tous les numéros individuels de cette série.</li>
+          <li>Vous souhaitez sélectionner plusieurs comics en même temps (par ex. pour tous les supprimer ou les modifier d'un coup) ? Cela fonctionne exactement comme vous le connaissez dans l'Explorateur Windows : maintenez la touche CTRL enfoncée et cliquez successivement sur chaque comic souhaité pour ajouter ou retirer des comics individuels de la sélection. Vous pouvez aussi maintenir la touche MAJ enfoncée et cliquer sur le premier puis le dernier comic d'une série pour sélectionner d'un coup tout ce qui se trouve entre les deux.</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         1) Édition intégrale
+         ============================================================ -->
+    <section class="step" id="kapitel1">
+      <h2>1️⃣ Créer une édition intégrale</h2>
+      
+      <div class="description">
+          <p>Une « édition intégrale » est un volume épais dans lequel plusieurs numéros individuels d'une série ont été réimprimés ensemble (par ex. « Astérix Intégrale : Tomes 1 à 3 en un seul livre »). Pour que le programme reconnaisse cela et associe correctement les numéros, vous devez marquer ce volume comme édition intégrale. Cela fonctionne aussi bien lors de la création que, par la suite, lors de la modification d'un comic déjà existant :</p>
+<img src="anleitung_gesamtausgabe_fr.avif">
+          <ol>
+          <li>Ouvrez soit « Nouveau comic » (pour une nouvelle entrée), soit « Modifier le comic » (pour une entrée déjà existante).</li>
+          <li>Cherchez la case à cocher intitulée « Édition intégrale » et cliquez dessus une fois, de sorte qu'une coche apparaisse.</li>
+          <li>Vous devez maintenant indiquer quels numéros font partie de cette édition intégrale. Si vous avez déjà créé les numéros individuels au préalable dans votre base de données, cliquez sur la petite flèche à côté du champ de saisie - une liste s'ouvre, dans laquelle vous pouvez simplement sélectionner les numéros correspondants. Si vous n'avez pas encore d'entrées correspondantes, tapez simplement le nom directement dans le champ.</li>
+          <li>Avec « Ajouter d'autres numéros », vous pouvez ajouter encore plus de numéros à cette édition intégrale, s'il en manque.</li>
+          <li>Pour finir, confirmez comme d'habitude avec « OK » pour que tout soit enregistré.</li>
+        </ol>
+       </div>
+    </section>
+
+
+    <!-- ============================================================
+         2) Anthologie
+         ============================================================ -->
+    <section class="step" id="kapitel2">
+      <h2>2️⃣ Créer une anthologie</h2>
+     
+      <div class="description">
+          <p>Une « anthologie » est un numéro qui contient non pas une, mais plusieurs histoires différentes (souvent de dessinateurs/scénaristes différents). Pour que vous puissiez ensuite retrouver dans votre base de données quelle histoire se trouve où, vous devez marquer un tel numéro comme anthologie. Cela fonctionne aussi bien lors de la création que, par la suite, lors de la modification d'un comic déjà existant :</p>
+ <img src="anleitung_anthologie_fr.avif">
+          <ol>
+          <li>Ouvrez soit « Nouveau comic » (pour une nouvelle entrée), soit « Modifier le comic » (pour une entrée déjà existante).</li>
+          <li>Cherchez la case à cocher intitulée « Anthologie » et cliquez dessus une fois, de sorte qu'une coche apparaisse.</li>
+          <li>Saisissez le titre de la première histoire dans le champ prévu à cet effet - ce champ est obligatoire, impossible de continuer sans titre. Dessinateur, scénariste et nombre de pages peuvent également être saisis, mais ce n'est pas obligatoire (optionnel).</li>
+          <li>Si le même numéro contient d'autres histoires, cliquez sur « Ajouter d'autres numéros » et saisissez de la même manière le titre (et éventuellement dessinateur/scénariste/pages) de l'histoire suivante. Répétez cela jusqu'à ce que toutes les histoires du numéro soient saisies.</li>
+          <li>Pour finir, confirmez comme d'habitude avec « OK » pour que tout soit enregistré.</li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         3) Lot
+         ============================================================ -->
+    <section class="step" id="kapitel3">
+      <h2>3️⃣ Lot - créer plusieurs comics à la fois</h2>
+      <div class="description">
+          <p>Vous avez par exemple Astérix numéro 1 à 10 et vous ne voulez pas les taper dix fois un par un ? C'est exactement à cela que sert « Lot ». Il vous permet de créer d'un coup plusieurs numéros d'une série en une seule fois, au lieu de saisir chacun séparément via « Nouveau comic ».</p>
+      <img src="anleitung_batch_1_fr.avif">
+      <img src="anleitung_batch_2_fr.avif">
+
+          <ol>
+          <li>Créez d'abord un nouveau comic normalement et remplissez Série, Éditeur, etc. comme d'habitude.</li>
+          <li>Cherchez la case à cocher « Lot » et cochez-la. Dès qu'elle est cochée, un nouveau champ apparaît, dans lequel vous pouvez saisir une plage de numéros.
+          Ce nouveau champ comporte « de » et « à ». Dans « de », saisissez le premier numéro de fascicule (par ex. 1), dans « à » le dernier (par ex. 10). Le programme crée alors automatiquement tous les numéros 1 à 10 pour vous - vous n'avez pas besoin de taper chaque numéro individuellement.</li>
+          <li>Pour que chaque numéro n'ait pas la même image de couverture, cliquez sur le bouton avec l'icône de dossier. Une nouvelle fenêtre supplémentaire s'ouvre alors.</li>
+          <li>Dans cette nouvelle fenêtre, vous voyez une liste de tous les numéros que vous êtes en train de créer (par ex. numéro 1 à numéro 10). Cliquez à l'endroit correspondant pour chaque numéro individuel et choisissez son image de couverture, saisissez titre et ISBN. Faites cela une fois pour chaque numéro, jusqu'à ce qu'ils aient tous leur propre couverture.</li>
+          <li>Une fois terminé, confirmez avec « OK » (comme d'habitude) - c'est seulement alors que tous les numéros sont réellement enregistrés dans la base de données.</li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         5) Créer & associer un groupe
+         ============================================================ -->
+    <section class="step" id="kapitel4">
+      <h2>4️⃣ Créer un groupe &amp; y associer des comics</h2>
+      <div class="description">
+        <p>⚠️ Important : « Créer un groupe » crée uniquement un espace réservé vide - aucun comic n'y est encore associé. C'est une seconde étape, séparée, qui suit.</p>
+        <p>Un groupe rassemble plusieurs séries qui vont ensemble sur le plan du contenu (par ex. une série principale + des dérivés), et c'est aussi l'endroit où vous pouvez déposer des images de coffret, de figurines et d'artworks qui appartiennent à tout le groupe plutôt qu'à un seul numéro.</p>
+
+        <p class="note">Étape 1 : créer le groupe</p>
+		<img src="anleitung_gruppe_1_fr.avif">
+        <ol>
+          <li>Cliquez sur « Plus » dans la barre d'outils.</li>
+          <li>Cliquez sur « Créer un groupe ».</li>
+          <li>Saisissez le nom souhaité (par ex. « Astérix »).</li>
+          <li>Cliquez sur OK.</li>
+        </ol>
+        <p>C'est tout pour cette étape - le groupe existe maintenant, mais il est encore complètement vide. Aucun numéro n'y est encore rattaché.</p>
+
+        <p class="note">Étape 2 : associer des comics au groupe</p>
+        <p>Pour qu'un comic appartienne réellement à ce groupe, vous devez le saisir pour chaque numéro individuellement - ou bien sélectionner plusieurs numéros au préalable :</p>
+		<img src="anleitung_gruppe_2_fr.avif">
+        <ol>
+          <li>Ouvrez le numéro via « Modifier ».</li>
+          <li>Dans le champ « Groupe », sélectionnez via la liste déroulante le nom que vous avez attribué à l'étape 1.</li>
+          <li>Enregistrez avec OK.</li>
+        </ol>
+        <p>Répétez cela pour chaque numéro qui doit appartenir au groupe. La « Série » du numéro (c'est-à-dire son nom sur la couverture) reste inchangée - seule l'association au groupe change.</p>
+
+        <p class="note">Ce qui change en conséquence</p>
+        <ul>
+          <li>Dans le tableau, tous les numéros partageant le même groupe sont désormais affichés ensemble sous un en-tête de groupe (par ex. « Astérix (10 numéros) »), même s'ils ont des noms de série différents.</li>
+		  <li>En cliquant sur « Modifier » sur cet en-tête de groupe, vous ouvrez « Modifier la série » - vous pouvez y télécharger en plus des images de coffret, de figurines et d'artworks pour tout le groupe.</li>
+        </ul>
+          <img src="anleitung_gruppe_3_fr.avif">
+
+        <p>💡 En résumé : « Créer un groupe » ne fait que créer le dossier vide. Les numéros doivent ensuite y être placés individuellement via leur propre champ « Groupe ».</p>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         6) Vérifier les couvertures & les vignettes
+         ============================================================ -->
+    <section class="step" id="kapitel5">
+      <h2>5️⃣ Vérifier les couvertures &amp; les vignettes</h2>
+      <div class="description">
+        <p>C'est ici que vous trouvez et nettoyez les problèmes dans le dossier de couvertures de votre base de données - images superflues, couvertures enregistrées en double, et comics auxquels il manque encore une image.</p>
+        <p>Ouvrir : <strong>Menu/Bases de données → Vérifier les couvertures</strong></p>
+        <p>La fenêtre comporte trois onglets en haut, entre lesquels vous pouvez basculer.</p>
+
+        <p class="note">Onglet 1 - Trouver les couvertures inutilisées</p>
+        <p>Affiche les images enregistrées dans le dossier de couvertures mais qui n'appartiennent plus à aucun comic (par ex. parce que le comic a été supprimé mais que l'image est restée).</p>
+        <ol>
+          <li>Ouvrez l'onglet « Trouver les couvertures inutilisées » (déjà sélectionné par défaut).</li>
+          <li>Vous voyez une liste des images trouvées, avec un petit aperçu.</li>
+          <li>Cochez les images que vous souhaitez supprimer.</li>
+          <li>Cliquez sur « Supprimer ».</li>
+        </ol>
+        <p>👍 S'il est indiqué « Aucune couverture inutilisée » avec une icône de pouce levé, tout est propre - rien à faire.</p>
+
+        <p class="note">Onglet 2 - Trouver les couvertures en double</p>
+        <p>Affiche les images enregistrées plusieurs fois dans le dossier de couvertures (sous des noms de fichiers différents, mais identiques ou très similaires sur le plan du contenu).</p>
+
+        <p class="note">Le curseur de sensibilité (détection de similarité)</p>
+        <p>Le programme compare automatiquement toutes vos images de couverture entre elles et essaie de déterminer lesquelles sont en fait la même image. Le curseur « Sensibilité » détermine à quel point cette comparaison doit être exacte pour que deux images soient considérées comme « identiques ».</p>
+        <ul>
+          <li><strong>Curseur tout à gauche (valeur basse, stricte) :</strong> Ne compte comme « identique » que si les images sont vraiment quasi identiques pixel par pixel. Peu de résultats, mais très fiables - certains vrais doublons (par ex. légèrement recadrés ou compressés différemment) sont ainsi manqués.</li>
+          <li><strong>Curseur tout à droite (valeur haute, généreuse) :</strong> Compte déjà comme « identique » si les images ne se ressemblent que grossièrement. Plus de résultats - mais le risque augmente que des couvertures en réalité différentes soient classées à tort comme « identiques ».</li>
+        </ul>
+        <p>Il n'y a pas de valeur « correcte » - cela dépend de l'apparence de vos couvertures. Déplacez le curseur et observez comment la liste de résultats en dessous s'ajuste immédiatement.</p>
+        <p>💡 Si un nom de comic est indiqué à côté d'une image, elle appartient à ce comic - en général, vous ne devriez pas la supprimer. Si aucun nom n'est indiqué à côté, elle n'appartient à aucun comic et peut généralement être supprimée sans risque.</p>
+        <ol>
+          <li>Ouvrez l'onglet « Trouver les couvertures en double ».</li>
+          <li>Ajustez la sensibilité si nécessaire.</li>
+          <li>Parcourez les groupes trouvés - vérifiez chaque image individuellement via l'aperçu pour voir s'il s'agit vraiment d'un doublon.</li>
+          <li>Ne cochez que ce que vous voulez vraiment supprimer.</li>
+          <li>Cliquez sur « Supprimer ».</li>
+        </ol>
+        <p>⚠️ Vérifiez que les couvertures sont vraiment identiques avant de supprimer ! La détection automatique peut se tromper, en particulier avec des couvertures ayant un cadre/une mise en page similaire mais un contenu différent - le curseur n'est qu'une aide, pas une garantie.</p>
+
+        <p class="note">Onglet 3 - Comics sans couverture</p>
+        <p>Affiche les comics de votre base de données auxquels aucune image n'est encore associée (vous les reconnaissez dans le tableau normal à l'icône d'appareil photo à la place d'une couverture). Vous ne pouvez rien supprimer directement ici - la liste sert uniquement à donner une vue d'ensemble. Cliquez sur une entrée pour modifier le comic concerné et y ajouter une image.</p>
+
+        <p class="note">Vérifier les vignettes</p>
+        <p>Les images de couverture peuvent peser plusieurs Mo - plus il y en a, plus le chargement est long. C'est pourquoi le programme crée automatiquement de petites copies à chargement rapide (« vignettes »). Cela se fait en principe tout seul, vous n'avez normalement pas à vous en occuper.</p>
+        <p>Si quelque chose s'est mal passé (par ex. après un plantage ou des interventions manuelles dans le système de fichiers), « Vérifier les vignettes » vérifie qu'une copie miniature existe bien pour chaque couverture, et complète automatiquement celles qui manquent.</p>
+        <p>Ouvrir : <strong>Menu/Bases de données → Vérifier les vignettes</strong></p>
+        <ol>
+          <li>Cliquez sur « Vérifier ».</li>
+          <li>Le programme parcourt en arrière-plan toutes les couvertures (cela peut prendre un moment avec beaucoup de comics).</li>
+          <li>Les vignettes manquantes sont recréées automatiquement.</li>
+        </ol>
+        <p>💡 Que se passe-t-il s'il manque une vignette ? Rien de grave - l'application fonctionne quand même parfaitement, les images se chargent juste un peu plus lentement jusqu'à ce que vous exécutiez cette fonction une fois.</p>
+
+        <p>💡 En résumé : « Vérifier les couvertures » nettoie le dossier d'images, « Vérifier les vignettes » répare les aperçus rapides - vous pouvez lancer les deux sans risque de temps en temps, mais avec « Trouver les couvertures en double », vérifiez toujours vous-même avant de supprimer.</p>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         7) Importer des comics
+         ============================================================ -->
+    <section class="step" id="kapitel6">
+      <h2>6️⃣ Importer des comics</h2>
+      <div class="description">
+        <p>C'est ici que vous récupérez des comics d'une autre base de données vers votre base de données actuellement ouverte.</p>
+
+        <p class="note">Étape 1 : ouvrir la fenêtre</p>
+        <ol>
+          <li>Cliquez sur « Plus » dans la barre d'outils.</li>
+          <li>Cliquez sur « Importer des comics ».</li>
+        </ol>
+
+        <p class="note">Étape 2 : sélectionner un fichier</p>
+        <p>Vous voyez une liste de toutes les autres bases de données trouvées. Cliquez sur le nom de la base de données depuis laquelle vous voulez récupérer des comics - elle est alors mise en surbrillance.</p>
+
+        <p class="note">Étape 3 : confirmer</p>
+        <p>Dès qu'un fichier est sélectionné, le bouton OK apparaît. Cliquez dessus.</p>
+
+        <p class="note">Ce qui se passe ensuite</p>
+        <ul>
+          <li>Tous les comics du fichier sélectionné sont repris dans votre base de données actuelle.</li>
+          <li>Les comics correspondant exactement, sur le plan du contenu, à un comic déjà existant ne sont pas importés en double.</li>
+          <li>Les images associées (couverture, tirage d'art, coffret, figurines, artworks) sont automatiquement reprises également.</li>
+          <li>Une fenêtre de résultat vous montre à la fin combien de comics ont été repris et combien ont été ignorés en tant que doublons.</li>
+        </ul>
+        <p>💡 L'autre base de données reste inchangée dans le processus - seules des copies sont reprises dans votre base de données actuelle, rien n'est supprimé du fichier source.</p>
+
+        <p>💡 En résumé : « Importer des comics » est un sens unique vers votre base de données actuelle - sans risque à essayer, puisque le fichier source n'est jamais modifié.</p>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         8) Exporter des comics
+         ============================================================ -->
+    <section class="step" id="kapitel7">
+      <h2>7️⃣ Exporter des comics</h2>
+      <div class="description">
+        <p>C'est ici que vous copiez (ou déplacez) une sélection de vos comics vers une autre base de données - soit une nouvelle, soit une qui existe déjà.</p>
+
+        <p class="note">Étape 1 : sélectionner des comics</p>
+        <p>Dans le tableau, sélectionnez les comics que vous souhaitez exporter. Le bouton « Exporter des comics » (sous « Plus ») ne devient cliquable qu'une fois qu'au moins un comic est sélectionné.</p>
+
+        <p class="note">Étape 2 : choisir la destination</p>
+        <ul>
+          <li><strong>Nouveau fichier :</strong> Une toute nouvelle base de données est créée, ne contenant que les comics sélectionnés. Vous lui donnez un nom.</li>
+          <li><strong>Base de données existante :</strong> Les comics sélectionnés sont ajoutés à une base de données déjà existante. Vous choisissez le fichier de destination dans une liste.</li>
+        </ul>
+
+        <p class="note">Étape 3 : choisir Copier ou Déplacer</p>
+        <ul>
+          <li><strong>Copier (par défaut) :</strong> Les comics se retrouvent en plus dans la base de données de destination - ils restent inchangés dans votre base de données actuelle.</li>
+          <li><strong>Déplacer :</strong> Les comics sont transférés vers la base de données de destination et supprimés de votre base de données actuelle. Les images associées sont également déplacées (pas conservées en double) - sauf si un autre comic restant utilise encore exactement la même image (par ex. une couverture d'intégrale partagée), auquel cas elle est conservée par sécurité.</li>
+        </ul>
+
+        <p class="note">Étape 4 : confirmer</p>
+        <p>Cliquez sur OK.</p>
+
+      </div>
+    </section>
+
+
+
+
+    <!-- ============================================================
+         Licence / Avertissement / Contact
+         ============================================================ -->
+    <section class="step" id="comixz">
+	<h2>8️⃣ Mentions légales</h2>
+      <div class="description">
+
+        <p class="note">Licence :</p>
+        <p>
+          Ce logiciel est gratuit et peut être utilisé, copié et
+          redistribué par tous.
+        </p>
+        <p>
+          L'utilisation commerciale n'est pas autorisée. Seules les
+          fins privées, personnelles et non commerciales sont
+          autorisées (par ex. gestion de sa propre collection,
+          usage personnel, partage avec des amis/connaissances).
+        </p>
+        <p>
+          Distribué sous licence PolyForm Noncommercial License 1.0.0.
+        </p>
+
+        <p class="note">Avertissement :</p>
+        <p>
+          Ce logiciel est fourni « tel quel », sans aucune garantie.
+          L'auteur décline toute responsabilité pour :
+        </p>
+        <ul>
+          <li>la perte ou la corruption de données</li>
+          <li>les dommages au système ou au matériel</li>
+          <li>les dommages directs, indirects ou consécutifs de quelque nature que ce soit,</li>
+        </ul>
+        <p>
+          résultant de l'utilisation ou du fonctionnement de ce
+          logiciel.
+        </p>
+        <p>
+          L'utilisation se fait sous votre propre responsabilité et
+          à vos propres risques. Il est fortement recommandé
+          d'effectuer des copies de sauvegarde de vos données
+          importantes avant utilisation.
+        </p>
+
+        <p class="note">Copyright : </p><p> -=ComixZ=-</p><br>
+        <p class="note">eMail : </p><p> comixz@tuta.io</p><br>
+        <p class="note">version actuelle : </p><p> https://github.com/ComixZ/Anti-Comic-Chaos-Tool</p>
+
+      </div>
+    </section>
+
+  </main>
+
+
+ <footer>
+    <h1 class="brand">-=ComixZ=-</h1>
+     <div class="logo-frame">
+      <!-- AUTOPLAY SUPPRIMÉ ICI -->
+      <video src="comixz_logo_film.mp4" muted disablePictureInPicture></video>
+    </div>
+  </footer>
+     <br>
+  
+   
+
+
+<script src="style.js"></script>
+</body>
+</html>

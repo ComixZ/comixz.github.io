@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurze Anleitung</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h4>Anti-Comic-Chaos-Tool</h4>
+    <h3>v1.9.2026</h3>
+  </header>
+
+
+  <main>
+
+    <!-- ============================================================
+         Inhaltsverzeichnis
+         ============================================================ -->
+    <section class="step" id="inhaltsverzeichnis">
+      <h2>Inhalt</h2>
+      <div class="description">
+        <ul style="list-style: none; ">
+		  <li><a class="weiter-btn" href="#crashkurs">0️⃣ Kleiner Crashkurs</a></li>
+          <li><a class="weiter-btn" href="#kapitel1">1️⃣ Gesamtausgabe erstellen</a></li>
+          <li><a class="weiter-btn" href="#kapitel2">2️⃣ Anthologie erstellen</a></li>
+          <li><a class="weiter-btn" href="#kapitel3">3️⃣ Batch - mehrere Comics auf einmal erstellen</a></li>
+          <li><a class="weiter-btn" href="#kapitel4">4️⃣ Gruppe erstellen &amp; Comics zuordnen</a></li>
+          <li><a class="weiter-btn" href="#kapitel5">5️⃣ Cover prüfen &amp; Thumbs prüfen</a></li>
+          <li><a class="weiter-btn" href="#kapitel6">6️⃣ Importiere Comics</a></li>
+          <li><a class="weiter-btn" href="#kapitel7">7️⃣ Exportiere Comics</a></li>
+	      <li><a class="weiter-btn" href="#comixz">8️⃣ Impressum</a></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         Einleitung / Wichtige Hinweise
+         ============================================================ -->
+    <section class="step">
+      
+      <div class="description">
+        <p>❓ "Anti-Comic-Chaos-Tool" ist ein kleines Programm, mit dem Ihr Eure Comic-Sammlung verwalten könnt, ursprünglich für deutschsprachige Comics gedacht, funktioniert aber genauso gut mit englischen, französischen oder anderen Sprachen. Egal ob Ihr nur 10 Mangas oder eine komplette Disney-Sammlung habt: Mit diesem Tool wisst Ihr immer, was Ihr schon besitzt.</p>
+        <p>😁 Ihr müsst nichts installieren. Kein Setup-Assistent, keine Registrierung, keine Werbung. Der ganze Ordner mit dem Programm drin funktioniert einfach so, wie er ist – Ihr könnt ihn also auch einfach auf einen USB-Stick kopieren und an einem anderen PC weiterbenutzen.</p>
+        <p>⚠️ Folgende 2 Dateien und der dazugehörige Ordner müssen immer zusammen im selben Verzeichnis (also im selben Ordner auf der Festplatte oder dem Stick) liegen:</p>
+        <ul>
+          <li>Die Programmdatei: "acct.exe" (das startet Ihr, um das Programm zu öffnen)</li>
+          <li>Die Einstellungsdatei: "comic.ini" (hier merkt sich das Programm Eure Einstellungen)</li>
+          <li>Ein Ordner mit dem Namen "DB_name der datenbank" – darin liegen alle Bilder und die eigentliche Datenbank-Datei.</li>
+        </ul>
+        <p>Legt Ihr Euch mehrere Datenbanken an (z. B. weil Ihr getrennt nach Mangas und Comics sortieren wollt), erstellt das Programm für jede automatisch einen eigenen Ordner, z. B. "DB_name der datenbank1", "DB_name der datenbank2" und so weiter. Um die müsst Ihr Euch nicht selbst kümmern, die legt das Programm von alleine an.</p>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         Crashkurs
+         ============================================================ -->
+    <section class="step" id="crashkurs">
+      <h2>0️⃣ Kleiner Crashkurs</h2>
+      <div class="description">
+        <p>Das Eingeben und Bearbeiten von Comics ist eigentlich selbsterklärend – schaut Euch am besten einfach mal die Eingabemaske an und probiert ein bisschen herum. Ein paar Kleinigkeiten funktionieren aber etwas anders, als Ihr es vielleicht aus anderen Programmen gewohnt seid:</p>
+        
+        <ul>
+          <li>Sobald Ihr irgendwo etwas ändert und danach auf "OK" klickt, wird das sofort und automatisch in die Datenbank geschrieben. So einen Button wie "Speichern" oder "Speichern unter", den Ihr vielleicht aus Word oder anderen Programmen kennt, gibt es hier absichtlich nicht.</li>
+          <li>Neben manchen Eingabefeldern seht Ihr rechts einen kleinen Pfeil ▼. Klickt Ihr darauf, öffnet sich eine Liste mit Werten, die Ihr in dieses Feld schon einmal eingetragen habt (z. B. Namen von Zeichnern oder Autoren) – so müsst Ihr nicht jedes Mal alles neu eintippen, sondern könnt einen vorhandenen Eintrag einfach anklicken. Ihr könnt aber genauso gut auch etwas komplett Neues in das Feld eintippen, wenn der gewünschte Name noch nicht in der Liste steht.</li>
+          <li>Legt Ihr mehrere Hefte einer Serie an (z. B. Asterix Heft 10 bis Heft 33), fasst das Programm diese automatisch im Hauptfenster unter dem gemeinsamen Namen "Asterix" zusammen, damit die Liste übersichtlich bleibt. Links neben so einem Serien-Namen seht Ihr ein kleines Pfeil-Symbol <img src="pfeil_blau_treeview.png" style="height: 1em; width: auto; vertical-align: middle; display: inline; margin: 0 4px;" alt="Pfeil">. Klickt darauf, um alle einzelnen Hefte dieser Serie ein- oder wieder auszublenden.</li>
+          <li>Wollt Ihr mehrere Comics gleichzeitig auswählen (z. B. um sie alle auf einmal zu löschen oder zu bearbeiten), geht das genau wie Ihr es aus dem Windows-Explorer kennt: Haltet die Taste STRG gedrückt und klickt nacheinander auf jeden gewünschten Comic, um einzelne Comics dazu- oder abzuwählen. Alternativ haltet die Taste SHIFT gedrückt und klickt auf den ersten und dann auf den letzten Comic einer Reihe, um alle dazwischenliegenden Comics auf einmal auszuwählen.</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         1) Gesamtausgabe
+         ============================================================ -->
+    <section class="step" id="kapitel1">
+      <h2>1️⃣ Gesamtausgabe erstellen</h2>
+      
+      <div class="description">
+          <p>Eine "Gesamtausgabe" ist ein dicker Sammelband, in dem mehrere einzelne Hefte einer Serie zusammen nachgedruckt sind (z. B. "Asterix Gesamtausgabe: Band 1-3 in einem Buch"). Damit das Programm das erkennt und die Hefte richtig zuordnet, müsst Ihr diesen Band als Gesamtausgabe kennzeichnen. Das geht sowohl beim Neuanlegen als auch nachträglich beim Bearbeiten eines schon vorhandenen Comics:</p>
+<img src="anleitung_gesamtausgabe_de.avif">
+          <ol>
+          <li>Öffnet entweder "Neuen Comic anlegen" (für einen neuen Eintrag) oder "Comic bearbeiten" (für einen bereits vorhandenen Eintrag).</li>
+          <li>Sucht das Kästchen mit der Beschriftung "Gesamtausgabe" und klickt einmal drauf, sodass ein Haken erscheint.</li>
+          <li>Jetzt müsst Ihr angeben, welche Hefte in dieser Gesamtausgabe drinstecken. Habt Ihr die einzelnen Hefte bereits vorher schon in Eurer Datenbank angelegt, klickt auf den kleinen Pfeil neben dem Eingabefeld – es öffnet sich eine Liste, aus der Ihr die passenden Hefte einfach auswählen könnt. Habt Ihr noch keine passenden Einträge, tippt den Namen einfach direkt ins Feld ein.</li>
+          <li>Mit "Weitere Hefte hinzufügen" könnt Ihr noch mehr Hefte zu dieser Gesamtausgabe dazu packen, falls noch welche fehlen.</li>
+          <li>Zum Schluss wie gewohnt mit "OK" bestätigen, damit alles gespeichert wird.</li>
+        </ol>
+       </div>
+    </section>
+
+
+    <!-- ============================================================
+         2) Anthologie
+         ============================================================ -->
+    <section class="step" id="kapitel2">
+      <h2>2️⃣ Anthologie erstellen</h2>
+     
+      <div class="description">
+          <p>Eine "Anthologie" ist ein Heft, in dem nicht nur eine, sondern gleich mehrere verschiedene Geschichten drinstecken (oft von unterschiedlichen Zeichnern/Autoren). Damit Ihr in Eurer Datenbank später nachschlagen könnt, welche Geschichte wo enthalten ist, müsst Ihr so ein Heft als Anthologie kennzeichnen. Das geht sowohl beim Neuanlegen als auch nachträglich beim Bearbeiten eines schon vorhandenen Comics:</p>
+ <img src="anleitung_anthologie_de.avif">
+          <ol>
+          <li>Öffnet entweder "Neuen Comic anlegen" (für einen neuen Eintrag) oder "Comic bearbeiten" (für einen bereits vorhandenen Eintrag).</li>
+          <li>Sucht das Kästchen mit der Beschriftung "Anthologie" und klickt einmal drauf, sodass ein Haken erscheint.</li>
+          <li>Tragt den Titel der ersten Story in das dafür vorgesehene Feld ein – dieses Feld ist ein Pflichtfeld, ohne einen Titel geht es also nicht weiter. Zeichner, Autor und Seitenzahl könnt Ihr zusätzlich eintragen, müsst Ihr aber nicht (optional).</li>
+          <li>Sind noch weitere Geschichten in demselben Heft enthalten, klickt auf "Weitere Hefte hinzufügen" und tragt auf die gleiche Weise Titel (und optional Zeichner/Autor/Seiten) der nächsten Story ein. Das wiederholt Ihr, bis alle Geschichten aus dem Heft erfasst sind.</li>
+          <li>Zum Schluss wie gewohnt mit "OK" bestätigen, damit alles gespeichert wird.</li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         3) Batch
+         ============================================================ -->
+    <section class="step" id="kapitel3">
+      <h2>3️⃣ Batch - mehrere Comics auf einmal erstellen</h2>
+      <div class="description">
+          <p>Ihr habt z. B. Asterix Heft 1 bis Heft 10 und wollt die nicht zehnmal einzeln von Hand eintippen? Genau dafür ist "Batch" da. Damit legt Ihr mit einem Rutsch mehrere Hefte einer Serie auf einmal an, statt jedes einzeln über "Neuen Comic anlegen" einzutragen.</p>
+      <img src="anleitung_batch_1_de.avif">
+      <img src="anleitung_batch_2_de.avif">
+
+          <ol>
+          <li>Legt zuerst ganz normal einen neuen Comic an und füllt Serie, Verlag usw. wie gewohnt aus.</li>
+          <li>Sucht das Kästchen "Batch" und setzt dort einen Haken. Sobald der Haken gesetzt ist, taucht ein neues Feld auf, in dem Ihr einen Nummernbereich eintragen könnt.
+          In diesem neuen Feld steht "von" und "bis". Bei "von" tragt Ihr die erste Heftnummer ein (z. B. 1), bei "bis" die letzte (z. B. 10). Das Programm legt Euch dann automatisch alle Hefte 1 bis 10 an – Ihr müsst nicht jede Nummer einzeln eintippen.</li>
+          <li>Damit nicht jedes Heft dasselbe Cover-Bild bekommt, klickt auf den Button mit dem Ordner. Daraufhin öffnet sich ein neues, zusätzliches Fenster.</li>
+          <li>In diesem neuen Fenster seht Ihr eine Liste mit allen Heften, die Ihr gerade anlegt (also z. B. Heft 1 bis Heft 10). Klickt bei jedem einzelnen Heft auf die passende Stelle und wählt das dazugehörige Cover-Bild aus, tragt Titel und ISBN ein. Das macht Ihr für jedes Heft einmal, bis alle ihr eigenes Cover haben.</li>
+          <li>Wenn Ihr fertig seid, mit "OK" bestätigen (wie sonst auch) – erst dann werden alle Hefte wirklich in der Datenbank gespeichert.</li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         4) Gruppe erstellen & zuordnen
+         ============================================================ -->
+    <section class="step" id="kapitel4">
+      <h2>4️⃣ Gruppe erstellen &amp; Comics zuordnen</h2>
+      <div class="description">
+        <p>⚠️ Wichtig: "Gruppe erstellen" legt nur einen leeren Platzhalter an – es werden dabei noch keine Comics zugeordnet. Das ist ein zweiter, separater Schritt danach.</p>
+        <p>Eine Gruppe fasst mehrere Serien zusammen, die inhaltlich zueinander gehören (z. B. eine Hauptreihe + Spin-offs), und ist außerdem der Ort, an dem Ihr Schuber-, Figuren- und Artwork-Bilder hinterlegen könnt, die zur ganzen Gruppe gehören statt zu einem einzelnen Heft.</p>
+
+        <p class="note">Schritt 1: Gruppe anlegen</p>
+		<img src="anleitung_gruppe_1_de.avif">
+        <ol>
+          <li>Klick auf "Mehr" in der Werkzeugleiste.</li>
+          <li>Klick auf "Gruppe erstellen".</li>
+          <li>Gewünschten Namen eingeben (z. B. "Asterix").</li>
+          <li>Klick auf OK.</li>
+        </ol>
+        <p>Das war's für diesen Schritt – die Gruppe existiert jetzt, ist aber noch komplett leer. Es hängt noch kein einziges Heft daran.</p>
+
+        <p class="note">Schritt 2: Comics der Gruppe zuordnen</p>
+        <p>Damit ein Comic wirklich zu dieser Gruppe gehört, müsst Ihr das für jedes einzelne Heft eintragen, oder Ihr markiert vorher meherere Hefte:</p>
+		<img src="anleitung_gruppe_2_de.avif">
+        <ol>
+          <li>Öffnet das Heft über "Bearbeiten".</li>
+          <li>Wählt im Feld "Gruppe" über die Dropdown-Liste den Namen aus, den Ihr in Schritt 1 vergeben habt.</li>
+          <li>Speichern mit OK.</li>
+        </ol>
+        <p>Wiederholt das für jedes Heft, das zur Gruppe gehören soll. Die "Serie" des Hefts (also wie es auf dem Cover heißt) bleibt dabei unverändert – nur die Gruppen-Zuordnung ändert sich.</p>
+
+        <p class="note">Was sich dadurch ändert</p>
+        <ul>
+          <li>In der Tabelle werden alle Hefte mit derselben Gruppe jetzt gemeinsam unter einem Gruppenkopf angezeigt (z. B. "Asterix (10 Hefte)"), auch wenn sie unterschiedliche Serien-Namen haben.</li>
+		  <li>Über "Bearbeiten" auf diesem Gruppenkopf öffnet Ihr "Serie bearbeiten" – dort könnt Ihr zusätzlich Schuber-, Figuren- und Artwork-Bilder für die ganze Gruppe hochladen.</li>
+        </ul>
+          <img src="anleitung_gruppe_3_de.avif">
+
+        <p>💡 Kurz gesagt: "Gruppe erstellen" macht nur den leeren Ordner. Die Hefte müssen anschließend einzeln über ihr eigenes "Gruppe"-Feld dort hineingelegt werden.</p>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         5) Cover prüfen & Thumbs prüfen
+         ============================================================ -->
+    <section class="step" id="kapitel5">
+      <h2>5️⃣ Cover prüfen &amp; Thumbs prüfen</h2>
+      <div class="description">
+        <p>Damit findet und bereinigt Ihr Probleme im Cover-Ordner Eurer Datenbank – überflüssige Bilder, doppelt gespeicherte Cover und Comics, denen noch ein Bild fehlt.</p>
+        <p>Öffnen: <strong>Menü/Datenbanken → Cover prüfen</strong></p>
+        <p>Das Fenster hat drei Reiter oben, zwischen denen Ihr wechseln könnt.</p>
+
+        <p class="note">Reiter 1 – Unbenutzte Cover finden</p>
+        <p>Zeigt Bilder, die im Cover-Ordner gespeichert sind, aber zu keinem Comic mehr gehören (z. B. weil der Comic gelöscht wurde, das Bild aber übrig blieb).</p>
+        <ol>
+          <li>Reiter "Unbenutzte Cover finden" öffnen (ist schon vorausgewählt).</li>
+          <li>Ihr seht eine Liste der gefundenen Bilder mit kleiner Vorschau.</li>
+          <li>Hakt die Bilder an, die Ihr löschen möchtet.</li>
+          <li>Klick auf "Löschen".</li>
+        </ol>
+        <p>👍 Steht dort "Keine unbenutzten Cover" mit einem Daumen-hoch-Symbol, ist alles sauber – nichts zu tun.</p>
+
+        <p class="note">Reiter 2 – Doppelte Cover finden</p>
+        <p>Zeigt Bilder, die mehrfach im Cover-Ordner gespeichert sind (unter verschiedenen Dateinamen, aber inhaltlich gleich oder sehr ähnlich).</p>
+
+        <p class="note">Der Empfindlichkeits-Regler (Ähnlichkeits-Erkennung)</p>
+        <p>Das Programm vergleicht alle Eure Cover-Bilder automatisch miteinander und versucht herauszufinden, welche davon eigentlich dasselbe Bild sind. Der Regler "Empfindlichkeit" bestimmt, wie genau dieser Vergleich sein muss, damit zwei Bilder als "gleich" gelten.</p>
+        <ul>
+          <li><strong>Regler weit links (niedriger Wert, streng):</strong> Es zählt nur "gleich", wenn die Bilder wirklich fast pixelgenau identisch sind. Wenige, aber sehr sichere Treffer – manche echten Duplikate (z. B. leicht anders zugeschnitten oder komprimiert) werden dabei aber übersehen.</li>
+          <li><strong>Regler weit rechts (hoher Wert, großzügig):</strong> Es zählt schon "gleich", wenn sich die Bilder nur grob ähneln. Mehr Treffer – dabei steigt aber das Risiko, dass eigentlich unterschiedliche Cover fälschlich als "gleich" eingestuft werden.</li>
+        </ul>
+        <p>Es gibt keinen "richtigen" Wert – das hängt davon ab, wie Eure Cover aussehen. Verschiebt den Regler und beobachtet, wie sich die Trefferliste darunter sofort anpasst.</p>
+        <p>💡 Steht bei einem Bild ein Comic-Name daneben, gehört es zu diesem Comic – das solltet Ihr in der Regel nicht löschen. Steht kein Name daneben, gehört es zu keinem Comic und kann meist gefahrlos gelöscht werden.</p>
+        <ol>
+          <li>Reiter "Doppelte Cover finden" öffnen.</li>
+          <li>Bei Bedarf die Empfindlichkeit anpassen.</li>
+          <li>Die gefundenen Gruppen durchsehen – jedes Bild einzeln per Vorschau prüfen, ob es wirklich ein Duplikat ist.</li>
+          <li>Nur anhaken, was Ihr wirklich löschen möchtet.</li>
+          <li>Klick auf "Löschen".</li>
+        </ol>
+        <p>⚠️ Vor dem Löschen prüfen, ob die Cover wirklich identisch sind! Die automatische Erkennung kann sich täuschen, besonders bei Covern mit ähnlichem Rahmen/Layout aber unterschiedlichem Inhalt – der Regler ist nur eine Hilfe, keine Garantie.</p>
+
+        <p class="note">Reiter 3 – Comics ohne Cover</p>
+        <p>Zeigt Comics in Eurer Datenbank, denen noch gar kein Bild zugeordnet ist (Ihr erkennt sie in der normalen Tabelle am Kamera-Symbol statt eines Covers). Hier könnt Ihr direkt nichts löschen – die Liste dient nur zur Übersicht. Klick auf einen Eintrag, um den betreffenden Comic zu bearbeiten und dort ein Bild hinzuzufügen.</p>
+
+        <p class="note">Thumbs prüfen</p>
+        <p>Cover-Bilder können mehrere MB groß sein – je mehr davon, desto länger dauert das Laden. Deshalb legt das Programm automatisch kleine, schnell ladende Kopien an ("Thumbs"). Das passiert eigentlich von selbst, Ihr müsst Euch normalerweise nicht darum kümmern.</p>
+        <p>Falls doch mal etwas schiefgelaufen ist (z. B. nach einem Absturz oder manuellen Eingriffen im Dateisystem), prüft "Thumbs prüfen", ob für jedes Cover auch wirklich eine Thumb-Kopie existiert, und ergänzt fehlende automatisch.</p>
+        <p>Öffnen: <strong><p>Öffnen: <strong>Menü/Datenbanken → Thumbs prüfen</strong></p></strong></p>
+        <ol>
+          <li>Klick auf "Prüfen".</li>
+          <li>Das Programm geht im Hintergrund alle Cover durch (bei vielen Comics kann das kurz dauern).</li>
+          <li>Fehlende Thumbnails werden automatisch neu erstellt.</li>
+        </ol>
+        <p>💡 Was passiert, wenn mal ein Thumb fehlt? Nichts Schlimmes – die App funktioniert trotzdem einwandfrei, Bilder laden dann nur etwas langsamer, bis Ihr diese Funktion einmal ausführt.</p>
+
+        <p>💡 Kurz gesagt: "Cover prüfen" räumt den Bilder-Ordner auf, "Thumbs prüfen" repariert die schnellen Vorschaubilder – beides könnt Ihr gefahrlos gelegentlich laufen lassen, solltet bei "Doppelte Cover finden" aber immer selbst nachschauen, bevor Ihr löscht.</p>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         6) Importiere Comics
+         ============================================================ -->
+    <section class="step" id="kapitel6">
+      <h2>6️⃣ Importiere Comics</h2>
+      <div class="description">
+        <p>Damit holt Ihr Comics aus einer anderen Datenbank in Eure aktuell geöffnete Datenbank hinein.</p>
+
+        <p class="note">Schritt 1: Fenster öffnen</p>
+        <ol>
+          <li>Klick auf "Mehr" in der Werkzeugleiste.</li>
+          <li>Klick auf "Importiere Comics".</li>
+        </ol>
+
+        <p class="note">Schritt 2: Datei auswählen</p>
+        <p>Ihr seht eine Liste aller anderen Datenbanken, die gefunden wurden. Klick auf den Namen der Datenbank, aus der Ihr Comics holen möchtet – sie wird dadurch markiert.</p>
+
+        <p class="note">Schritt 3: Bestätigen</p>
+        <p>Sobald eine Datei markiert ist, erscheint der OK-Button. Klick darauf.</p>
+
+        <p class="note">Was danach passiert</p>
+        <ul>
+          <li>Alle Comics aus der ausgewählten Datei werden in Eure aktuelle Datenbank übernommen.</li>
+          <li>Comics, die inhaltlich exakt einem bereits vorhandenen Comic entsprechen, werden nicht doppelt importiert.</li>
+          <li>Zugehörige Bilder (Cover, Kunstdruck, Schuber, Figuren, Artwork) werden automatisch mit übernommen.</li>
+          <li>Ein Ergebnis-Fenster zeigt Euch am Ende, wie viele Comics übernommen wurden und wie viele als Duplikate übersprungen wurden.</li>
+        </ul>
+        <p>💡 Die andere Datenbank bleibt dabei unverändert – es werden nur Kopien in Eure aktuelle Datenbank übernommen, nichts wird aus der Quelldatei entfernt.</p>
+
+        <p>💡 Kurz gesagt: "Importiere Comics" ist eine Einbahnstraße in Eure aktuelle Datenbank hinein – sicher zum Ausprobieren, da die Quelldatei nie verändert wird.</p>
+      </div>
+    </section>
+
+
+
+    <!-- ============================================================
+         7) Exportiere Comics
+         ============================================================ -->
+    <section class="step" id="kapitel7">
+      <h2>7️⃣ Exportiere Comics</h2>
+      <div class="description">
+        <p>Damit kopiert (oder verschiebt) Ihr eine Auswahl Eurer Comics in eine andere Datenbank – entweder in eine neu zu erstellende oder in eine bereits vorhandene.</p>
+
+        <p class="note">Schritt 1: Comics auswählen</p>
+        <p>Markiert in der Tabelle die Comics, die Ihr exportieren möchtet. Der Button "Exportiere Comics" (unter "Mehr") ist erst anklickbar, sobald mindestens ein Comic markiert ist.</p>
+
+        <p class="note">Schritt 2: Ziel wählen</p>
+        <ul>
+          <li><strong>Neue Datei:</strong> Es wird eine komplett neue Datenbank angelegt, die nur die ausgewählten Comics enthält. Ihr vergebt einen Namen dafür.</li>
+          <li><strong>Bestehende Datenbank:</strong> Die ausgewählten Comics werden zu einer bereits vorhandenen Datenbank hinzugefügt. Ihr wählt die Ziel-Datei aus einer Liste.</li>
+        </ul>
+
+        <p class="note">Schritt 3: Kopieren oder Verschieben wählen</p>
+        <ul>
+          <li><strong>Kopieren (Standard):</strong> Die Comics landen zusätzlich in der Zieldatenbank – in Eurer aktuellen Datenbank bleiben sie unverändert erhalten.</li>
+          <li><strong>Verschieben:</strong> Die Comics werden in die Zieldatenbank übertragen und aus Eurer aktuellen Datenbank entfernt. Zugehörige Bilder werden dabei ebenfalls verschoben (nicht doppelt behalten) – außer, ein anderer, verbleibender Comic nutzt genau dasselbe Bild noch (z. B. ein geteiltes Sammelband-Cover), dann bleibt es sicherheitshalber erhalten.</li>
+        </ul>
+
+        <p class="note">Schritt 4: Bestätigen</p>
+        <p>Klick auf OK.</p>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ============================================================
+         Lizenz / Haftungsausschluss / Kontakt
+         ============================================================ -->
+    <section class="step" id="comixz">
+	<h2>8️⃣ Impressum</h2>
+      <div class="description">
+
+        <p class="note">Lizenz:</p>
+        <p>
+          Diese Software ist kostenlos und darf von jedem genutzt,
+          kopiert und weiterverbreitet werden.
+        </p>
+        <p>
+          Kommerzielle Nutzung ist nicht gestattet. Erlaubt sind
+          ausschließlich private, persönliche und nichtkommerzielle
+          Zwecke (z. B. eigene Sammlungsverwaltung, private Nutzung,
+          Weitergabe an Freunde/Bekannte).
+        </p>
+        <p>
+          Lizenziert unter der PolyForm Noncommercial License 1.0.0.
+        </p>
+
+        <p class="note">Haftungsausschluss:</p>
+        <p>
+          Diese Software wird „wie besehen", ohne jegliche
+          Gewährleistung zur Verfügung gestellt. Der Autor übernimmt
+          keine Haftung für:
+        </p>
+        <ul>
+          <li>Datenverlust oder Datenbeschädigung</li>
+          <li>Schäden am System oder an Hardware</li>
+          <li>direkte, indirekte oder Folgeschäden jeglicher Art,</li>
+        </ul>
+        <p>
+          die durch die Nutzung oder den Betrieb dieser
+          Software entstehen.
+        </p>
+        <p>
+          Die Nutzung erfolgt auf eigene Verantwortung und eigenes
+          Risiko. Es wird dringend empfohlen, vor der Nutzung
+          Sicherungskopien wichtiger Daten anzulegen.
+        </p>
+
+        <p class="note">Copyright: </p><p> -=ComixZ=-</p><br>
+        <p class="note">eMail: </p><p> comixz@tuta.io</p><br>
+        <p class="note">aktuelle Version: </p><p> https://github.com/ComixZ/Anti-Comic-Chaos-Tool</p>
+
+      </div>
+    </section>
+
+  </main>
+
+
+ <footer>
+    <h1 class="brand">-=ComixZ=-</h1>
+     <div class="logo-frame">
+      <!-- AUTOPLAY HIER ENTFERNT -->
+      <video src="comixz_logo_film.mp4" muted disablePictureInPicture></video>
+    </div>
+  </footer>
+     <br>
+  
+   
+
+
+<script src="style.js"></script>
+</body>
+</html>

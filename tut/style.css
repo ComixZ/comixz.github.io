@@ -1,0 +1,220 @@
+/* ============================================================
+   HINWEIS
+   Diese Seite wird per pywebview (Microsoft Edge WebView2 /
+   Chromium) angezeigt, nicht mehr per tkinterweb (Tkhtml).
+   Deshalb funktioniert hier ganz normales, modernes CSS:
+   @font-face, linear-gradient() und border-radius werden alle
+   korrekt gerendert - keine Pillow-vorgerenderten PNGs mehr noetig.
+   ============================================================ */
+
+
+/* ---------- Fonts ---------- */
+
+@font-face {
+  font-family: 'font_comixz';
+  src: url('font_comixz.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'font_outline';
+  src: url('font_outline.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'font_normal';
+  src: url('font_normal.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+/* ---------- Design Tokens ---------- */
+
+:root {
+  --font-heading: "Segoe UI", Arial, sans-serif;
+  --font-body:    "Segoe UI", Arial, sans-serif;
+  --font-accent:  "ComicaBD", "Comic Sans MS", "Segoe UI", sans-serif;
+
+  --color-panel:  #ffffff;
+  --color-accent: #2f6b4f;
+  --color-text:   #2c2c2c;
+  --color-border: #e2dccb;
+}
+
+
+/* ---------- Reset ---------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  background: linear-gradient(180deg, #0037ff 0%, #cef1fe 100%);
+  background-attachment: fixed;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+
+/* ---------- Header ---------- */
+
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  color: var(--color-accent);
+  margin: 10px 0 0;
+  font-size: 2.5em;
+}
+
+h3 {
+  font-family: 'font_outline', var(--font-heading);
+  font-weight: normal;
+  font-style: normal;
+  color: #ffffff;
+  margin: 10px 0 0;
+  font-size: 2.0em;
+}
+
+h4 {
+  font-family: 'font_outline', var(--font-heading);
+  font-weight: normal;
+  font-style: normal;
+  color: #ffffff;
+  margin: 10px 0 0;
+  font-size: 3.2em;
+  text-align: center;
+}
+
+header p.subtitle {
+  font-family: var(--font-accent);
+  font-size: 1.5em;
+  color: #555555;
+  margin-top: 4px;
+}
+
+
+/* ---------- Main / Content Sections ---------- */
+
+main {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 20px 20px 80px;
+}
+
+section.step {
+  background-color: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 50px;
+}
+
+section.step h2 {
+  font-family: 'font_outline', var(--font-heading);
+  font-weight: normal;
+  font-style: normal;
+  color: var(--color-accent);
+  font-size: 2.3em;
+  margin-top: 0;
+}
+
+section.step img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  margin: 16px 10px;
+}
+
+.description,
+.note {
+  font-family: 'font_normal', var(--font-accent);
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.3em;
+  color: var(--color-accent);
+  margin-top: 6px;
+}
+
+.description ul,
+.description ol {
+  margin: 8px 0;
+  padding-left: 50px;
+}
+
+.description li {
+  margin-bottom: 6px;
+}
+
+
+/* ---------- In-page navigation links ---------- */
+
+a.weiter-btn,
+a.weiter-btn:visited,
+a.weiter-btn:active {
+  color: inherit; /* oder eine feste Farbe, z.B. #ffffff */
+  text-decoration: none;
+}
+
+a.weiter-btn:hover {
+  text-decoration: underline;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+  text-align: center;
+  font-family: var(--font-accent);
+  font-size: 1.2em;
+  color: #888888;
+  padding: 20px;
+}
+
+footer h1.brand {
+  font-family: 'font_comixz', var(--font-heading);
+  font-weight: normal;
+  color: #ffffff;
+  font-size: 4.5em;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.logo-frame {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 3px;
+  border-radius: 24px;
+  background: linear-gradient(150deg, #7d7d7d 0%, #fefefe 50%, #7d7d7d 100%);
+}
+
+.logo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.logo-frame video {
+  display: block;
+  width: 250px;
+  height: auto;
+  border-radius: 20px;
+}
