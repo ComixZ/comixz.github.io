@@ -1,0 +1,46 @@
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, rgba(51, 0, 255, 1) 0%, rgba(0, 172, 235, 1) 100%) fixed;
+  background-size: 100% 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 50px;
+  min-height: 100vh;
+  background: transparent;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+h1, h2, p, li, a {
+  font-family: 'Lumanosimo', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 3.2em;
+  text-align: center;
+  margin: 10px 0 0;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin: 10px 0 0;
+}
+
+p, li, a {
+  margin: 10px 0 0;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+}
