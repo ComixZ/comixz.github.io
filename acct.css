@@ -1,0 +1,90 @@
+html {
+
+  min-height: 100%;
+  background: linear-gradient(180deg, #0037ff 0%, #cef1fe 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: transparent;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+h1, h2, p, li, a {
+  font-family: 'Lumanosimo', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 3.2em;
+  text-align: center;
+  margin: 10px 0 0;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin: 10px 0 0;
+}
+
+p, li, a {
+  margin: 10px 0 0;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+
+
+
+.growing-word {
+  display: inline-flex;
+  align-items: baseline; 
+  white-space: nowrap;
+}
+
+.growing-word span:nth-child(1) { font-size: 1.1rem; }
+.growing-word span:nth-child(2) { font-size: 1.2rem; }
+.growing-word span:nth-child(3) { font-size: 1.3rem; }
+.growing-word span:nth-child(4) { font-size: 1.0rem; }
+.growing-word span:nth-child(5) { font-size: 1.4rem; }
+.growing-word span:nth-child(6) { font-size: 1.5rem; }
+.growing-word span:nth-child(7) { font-size: 1.6rem; }
+.growing-word span:nth-child(8) { font-size: 1.0rem; }
+.growing-word span:nth-child(9) { font-size: 1.6rem; }
+.growing-word span:nth-child(10) { font-size: 1.5rem; }
+.growing-word span:nth-child(11) { font-size: 1.4rem; }
+.growing-word span:nth-child(12) { font-size: 1.3rem; }
+.growing-word span:nth-child(13) { font-size: 1.0rem; }
+.growing-word span:nth-child(14) { font-size: 1.2rem; }
+.growing-word span:nth-child(15) { font-size: 1.1rem; }
