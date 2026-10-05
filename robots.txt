@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://comixz.github.io/sitemap.xml
