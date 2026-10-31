@@ -1,0 +1,788 @@
+html {
+  /* Schriftgröße wächst/schrumpft mit dem Browserfenster: 16 px ab ca. 1330 px Breite, minimal 14 px
+     (Handy und Tablet bleiben lesbar, kein Sprung bei 600/601 px). Alles andere (Überschriften, Texte,
+     Download-Button) skaliert über em/rem mit. */
+  font-size: clamp(14px, calc(8px + 0.6vw), 16px);
+  min-height: 100%;
+  background-color: #0a6cc4; /* Rückfall, falls das feste Hintergrundbild nicht greift */
+}
+
+/* Fester Hintergrund: eigene Ebene mit position: fixed statt background-attachment: fixed
+   (das ignorieren z. B. Safari auf iPhone/iPad und manche Browser mit Weichzeichner).
+   Nur der Inhalt scrollt, Verlauf und Sprechblasen bleiben stehen.
+   Sprechblasen: wenige, zufällig verteilte, gemischte Formen in dezentem Blau (Kachel 420 x 340 px,
+   wiederholt sich nahtlos). Cyan, Deckkraft der Kontur 14 %, Füllung 8 % im SVG ändern (stroke/fill rgba). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22420%22%20height%3D%22340%22%20viewBox%3D%220%200%20420%20340%22%3E%3Cg%20transform%3D%22translate%28295.1%2C221.7%29%20rotate%28-6%29%20scale%280.73%2C0.73%29%22%3E%3Cpath%20d%3D%22M-12%2C18.33%20L-22%2C32%20L0%2C20%20A30%2C20%200%201%200%20-12%2C18.33%20Z%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22/%3E%3Ccircle%20cx%3D%22-9%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3Ccircle%20cx%3D%220%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3Ccircle%20cx%3D%229%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28276.5%2C103.0%29%20rotate%2813%29%20scale%28-0.92%2C0.92%29%22%3E%3Cpath%20d%3D%22M-18%2C14%20A12%2C12%200%200%201%20-22%2C-8%20A14%2C14%200%200%201%202%2C-18%20A14%2C14%200%200%201%2024%2C-6%20A12%2C12%200%200%201%2020%2C14%20Z%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28365.7%2C107.3%29%20rotate%28-6%29%20scale%28-0.78%2C0.78%29%22%3E%3Cpath%20d%3D%22M32.0%2C0.0%20L19.3%2C3.9%20L27.7%2C12.0%20L14.1%2C10.6%20L16.0%2C20.8%20L5.2%2C14.5%20L0.0%2C24.0%20L-5.2%2C14.5%20L-16.0%2C20.8%20L-14.1%2C10.6%20L-27.7%2C12.0%20L-19.3%2C3.9%20L-32.0%2C0.0%20L-19.3%2C-3.9%20L-27.7%2C-12.0%20L-14.1%2C-10.6%20L-16.0%2C-20.8%20L-5.2%2C-14.5%20L-0.0%2C-24.0%20L5.2%2C-14.5%20L16.0%2C-20.8%20L14.1%2C-10.6%20L27.7%2C-12.0%20L19.3%2C-3.9%20Z%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28115.6%2C3.6%29%20rotate%28-11%29%20scale%280.9%2C0.9%29%22%3E%3Cpath%20d%3D%22M-16%2C-20%20H16%20Q30%2C-20%2030%2C-6%20V4%20Q30%2C18%2016%2C18%20H-4%20L-18%2C30%20L-14%2C18%20H-16%20Q-30%2C18%20-30%2C4%20V-6%20Q-30%2C-20%20-16%2C-20%20Z%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28115.6%2C343.6%29%20rotate%28-11%29%20scale%280.9%2C0.9%29%22%3E%3Cpath%20d%3D%22M-16%2C-20%20H16%20Q30%2C-20%2030%2C-6%20V4%20Q30%2C18%2016%2C18%20H-4%20L-18%2C30%20L-14%2C18%20H-16%20Q-30%2C18%20-30%2C4%20V-6%20Q-30%2C-20%20-16%2C-20%20Z%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%2839.8%2C-42.6%29%20rotate%287%29%20scale%28-0.75%2C0.75%29%22%3E%3Cellipse%20cx%3D%220%22%20cy%3D%220%22%20rx%3D%2230%22%20ry%3D%2220%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-20%22%20cy%3D%2227%22%20r%3D%224.2%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-28%22%20cy%3D%2235%22%20r%3D%222.6%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-9%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3Ccircle%20cx%3D%220%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3Ccircle%20cx%3D%229%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%2839.8%2C297.4%29%20rotate%287%29%20scale%28-0.75%2C0.75%29%22%3E%3Cellipse%20cx%3D%220%22%20cy%3D%220%22%20rx%3D%2230%22%20ry%3D%2220%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-20%22%20cy%3D%2227%22%20r%3D%224.2%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-28%22%20cy%3D%2235%22%20r%3D%222.6%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-9%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3Ccircle%20cx%3D%220%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3Ccircle%20cx%3D%229%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28459.8%2C-42.6%29%20rotate%287%29%20scale%28-0.75%2C0.75%29%22%3E%3Cellipse%20cx%3D%220%22%20cy%3D%220%22%20rx%3D%2230%22%20ry%3D%2220%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-20%22%20cy%3D%2227%22%20r%3D%224.2%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-28%22%20cy%3D%2235%22%20r%3D%222.6%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-9%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3Ccircle%20cx%3D%220%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3Ccircle%20cx%3D%229%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28459.8%2C297.4%29%20rotate%287%29%20scale%28-0.75%2C0.75%29%22%3E%3Cellipse%20cx%3D%220%22%20cy%3D%220%22%20rx%3D%2230%22%20ry%3D%2220%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-20%22%20cy%3D%2227%22%20r%3D%224.2%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-28%22%20cy%3D%2235%22%20r%3D%222.6%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-9%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3Ccircle%20cx%3D%220%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3Ccircle%20cx%3D%229%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%2849.7%2C55.0%29%20rotate%28-11%29%20scale%280.78%2C0.78%29%22%3E%3Cpath%20d%3D%22M-18%2C-17%20H18%20A17%2C17%200%200%201%2018%2C17%20H8%20L14%2C30%20L-4%2C17%20H-18%20A17%2C17%200%200%201%20-18%2C-17%20Z%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M-15%2C-6%20H15%20M-15%2C2%20H8%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28469.7%2C55.0%29%20rotate%28-11%29%20scale%280.78%2C0.78%29%22%3E%3Cpath%20d%3D%22M-18%2C-17%20H18%20A17%2C17%200%200%201%2018%2C17%20H8%20L14%2C30%20L-4%2C17%20H-18%20A17%2C17%200%200%201%20-18%2C-17%20Z%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M-15%2C-6%20H15%20M-15%2C2%20H8%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28201.8%2C233.0%29%20rotate%28-2%29%20scale%28-0.73%2C0.73%29%22%3E%3Cellipse%20cx%3D%220%22%20cy%3D%220%22%20rx%3D%2230%22%20ry%3D%2220%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-20%22%20cy%3D%2227%22%20r%3D%224.2%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-28%22%20cy%3D%2235%22%20r%3D%222.6%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.08%29%22%20stroke%3D%22rgba%28150%2C225%2C255%2C0.14%29%22%20stroke-width%3D%222%22/%3E%3Ccircle%20cx%3D%22-9%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3Ccircle%20cx%3D%220%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3Ccircle%20cx%3D%229%22%20cy%3D%220%22%20r%3D%222.4%22%20fill%3D%22rgba%28150%2C225%2C255%2C0.14%29%22/%3E%3C/g%3E%3C/svg%3E") 0 0 / 420px 340px repeat,
+    radial-gradient(ellipse 70% 45% at 18% 0%, rgba(140, 180, 255, 0.40), transparent 70%) 0 0 / 100% 100% no-repeat,
+    linear-gradient(180deg, #2b00e0 0%, #1448c8 38%, #0a6cc4 62%, #007a99 100%) 0 0 / 100% 100% no-repeat;
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: transparent;
+  /* Alles in Lumanosimo */
+  font-family: 'Lumanosimo', cursive;
+  font-size: 1.0625rem; /* = 17 px bei 16 px Basis */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+
+
+
+
+
+
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+
+
+h1, h2, h3, li, p, a, strong {
+  font-family: 'Lumanosimo', cursive;
+}
+
+li {
+  margin-top: 6px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  margin: 22px 0 6px;
+}
+
+
+
+h1 {
+  font-size: 3.2em;
+  text-align: center;
+  margin: 10px 0 0;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin: 10px 0 0;
+  color: #ffffff;
+}
+
+p, li, a {
+  margin: 10px 0 0;
+  font-size: 1em;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
+
+
+.growing-word {
+  font-family: 'Lumanosimo', cursive; /* der verspielte Teil bleibt in der Comic-Schrift */
+  display: inline-flex;
+  align-items: baseline; 
+  white-space: nowrap;
+}
+
+.growing-word span:nth-child(1) { font-size: 1.1rem; }
+.growing-word span:nth-child(2) { font-size: 1.2rem; }
+.growing-word span:nth-child(3) { font-size: 1.3rem; }
+.growing-word span:nth-child(4) { font-size: 1.0rem; }
+.growing-word span:nth-child(5) { font-size: 1.4rem; }
+.growing-word span:nth-child(6) { font-size: 1.5rem; }
+.growing-word span:nth-child(7) { font-size: 1.6rem; }
+.growing-word span:nth-child(8) { font-size: 1.0rem; }
+.growing-word span:nth-child(9) { font-size: 1.6rem; }
+.growing-word span:nth-child(10) { font-size: 1.5rem; }
+.growing-word span:nth-child(11) { font-size: 1.4rem; }
+.growing-word span:nth-child(12) { font-size: 1.3rem; }
+.growing-word span:nth-child(13) { font-size: 1.0rem; }
+.growing-word span:nth-child(14) { font-size: 1.2rem; }
+.growing-word span:nth-child(15) { font-size: 1.1rem; }
+
+
+/* ------------------------------------------------------------------ */
+/* Glaskarten: jeder Abschnitt in einem halbtransparenten Kasten       */
+/* ------------------------------------------------------------------ */
+
+.karte {
+  width: 90%;
+  max-width: 1400px; /* auf sehr breiten Monitoren (1920/2560 px) nicht über die ganze Breite ziehen */
+  margin: 22px auto;
+  padding: 14px 28px 24px;
+  border-radius: 38px;
+  border: 18px solid rgba(255, 255, 255, 0.26); /* dicker Glasrand, einfarbig (kein Verlauf); Deckkraft 0.26 ändern für mehr/weniger Durchsicht */
+  /* oben ein Glanzstreifen, darunter dunkle Tönung für gute Lesbarkeit */
+  /* Milchglas: heller, leicht bläulicher Schleier + Weichzeichner für alles, was hinter der Karte liegt
+     (Sprechblasen schimmern nur noch verschwommen durch). Stärke: 0.12 (Schleier) und 6px (Blur) ändern. */
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(rgba(200, 222, 255, 0.12), rgba(200, 222, 255, 0.12)),
+    rgba(0, 25, 90, 0.22);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background-clip: padding-box; /* Tönung und Glanz nur innerhalb der schwarzen Linie, nicht unter dem Rand */
+  box-shadow:
+    0 10px 26px rgba(0, 15, 70, 0.35),
+    0 0 0 2px #ffffff,                              /* weiße Außenlinie des Glasrands */
+    inset 0 0 0 3px #000000;                        /* schwarze Linie innen am Glasrand */
+  overflow-wrap: anywhere; /* lange URLs (Credits) laufen nicht aus der Karte */
+}
+
+.karte > h2:first-child,
+.kontakt-text > h2:first-child {
+  margin-top: 4px;
+}
+
+/* feine Linie unter jeder Kartenüberschrift */
+.karte h2 {
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* Emoji in den Überschriften: gleich große, gleich breite Box */
+.emoji {
+  display: inline-block;
+  width: 1.5em;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 1;
+  margin-right: 0.1em;
+  vertical-align: -0.05em;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+  text-shadow: none;
+}
+
+/* Listenpunkte: Blitz statt Punkt (nummerierte Listen bleiben unverändert) */
+.karte ul {
+  list-style: none;
+  padding-left: 4px;
+}
+
+.karte ul > li {
+  position: relative;
+  padding-left: 1.9em;
+}
+
+.karte ul > li::before {
+  content: "\26A1\FE0F";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5em;
+  text-align: center;
+  font-size: 0.95em;
+  line-height: inherit;
+  text-shadow: none;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+}
+
+.karte ul,
+.karte ol {
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.karte p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Screenshots mit hellblauem Glanzrahmen (wie die Thumbs in ACCT)     */
+/* ------------------------------------------------------------------ */
+
+.shot {
+  position: relative;
+  display: block;
+  width: 90%;
+  max-width: 1400px;
+  margin: 26px auto;
+  --shot-pad: clamp(8px, 2.2vw, 30px); /* Rahmenbreite schrumpft mit dem Browserfenster */
+  --shot-bild-radius: clamp(12px, 1.8vw, 24px);
+  padding: var(--shot-pad);
+  border-radius: calc(var(--shot-pad) + var(--shot-bild-radius));
+  /* breiter Glasrand (halbtransparent weiß), innen eine schwarze Linie ums Bild */
+  background: rgba(255, 255, 255, 0.26); /* halbtransparent weiß, gleicher Ton wie der Kartenrand */
+  border: 2px solid #ffffff; /* weiße Außenlinie */
+  box-shadow: 0 14px 34px rgba(0, 15, 70, 0.40);
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid #000000;
+  border-radius: var(--shot-bild-radius);
+}
+
+/* Glanz über der oberen Bildhälfte */
+.shot::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--shot-pad) + 3px);
+  right: calc(var(--shot-pad) + 3px);
+  top: calc(var(--shot-pad) + 3px);
+  height: 42%;
+  border-radius: var(--shot-bild-radius) var(--shot-bild-radius) 60% 60% / var(--shot-bild-radius) var(--shot-bild-radius) 18% 18%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+
+
+
+/* ------------------------------------------------------------------ */
+/* Download: Textlink mit Zip-Symbol; die Linie zeichnet sich beim     */
+/* Einblenden der Karte einmal von links nach rechts                   */
+/* ------------------------------------------------------------------ */
+
+.download-bereich {
+  text-align: center;
+  padding: 10px 0 4px;
+}
+
+a.download-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 4px 0 0;
+  padding-bottom: 8px;
+  font-size: 1.55em;
+  line-height: 1.25;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 0 2px 6px rgba(0, 15, 70, 0.6);
+  transition: filter 0.15s ease;
+}
+
+a.download-link .download-text {
+  text-align: left;
+}
+
+.zip-icon {
+  flex: 0 0 auto;
+  height: 2.4em;
+  width: auto;
+  filter: drop-shadow(0 3px 4px rgba(0, 15, 70, 0.5));
+  transition: transform 0.2s ease;
+}
+
+a.download-link .pfeil {
+  display: inline-block;
+  vertical-align: -0.12em;
+  margin-left: 0.2em;
+  transition: transform 0.2s ease;
+}
+
+/* Pfeil: dezent, schlanke weiße Linie */
+a.download-link .pfeil svg {
+  display: block;
+  width: 1.15em;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 1px 2px rgba(0, 15, 70, 0.55));
+}
+
+/* farbige Linie unter dem Link (Dunkelblau -> Hellblau -> Mittelblau); der feine helle Rand hält
+   das Dunkelblau auf dem dunklen Kartenhintergrund sichtbar */
+a.download-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #0b2a8a, #9fdcff, #3f8fe0);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7);
+  transform-origin: left center;
+  transition: height 0.15s ease;
+}
+
+/* Mit JavaScript: Linie startet unsichtbar und läuft ein, sobald die Karte erscheint (.sichtbar).
+   Ohne JavaScript gibt es die Klasse "js" nicht, dann steht die Linie sofort da. */
+.js .reveal a.download-link::after {
+  transform: scaleX(0);
+}
+
+.js .reveal.sichtbar a.download-link::after {
+  transform: scaleX(1);
+  transition: transform 0.9s ease 0.45s, height 0.15s ease;
+}
+
+a.download-link:hover,
+a.download-link:focus-visible {
+  filter: brightness(1.12);
+}
+
+a.download-link:hover::after,
+a.download-link:focus-visible::after {
+  height: 5px;
+}
+
+a.download-link:hover .pfeil,
+a.download-link:focus-visible .pfeil {
+  transform: translateX(5px);
+}
+
+a.download-link:hover .zip-icon,
+a.download-link:focus-visible .zip-icon {
+  transform: translateY(-2px) rotate(-3deg);
+}
+
+a.download-link:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 6px;
+  border-radius: 6px;
+}
+
+.download-meta {
+  margin: 8px 0 0;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.download-info {
+  margin: 10px 0 0;
+  font-size: 0.85em;
+  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.download-link,
+  a.download-link::after,
+  a.download-link .pfeil,
+  .zip-icon {
+    transition: none !important;
+  }
+  .js .reveal a.download-link::after {
+    transform: scaleX(1);
+  }
+}
+
+
+
+/* ------------------------------------------------------------------ */
+/* Kontaktkarte: Maskottchen mit Glanzrahmen und Sprechblase           */
+/* ------------------------------------------------------------------ */
+
+.kontakt-zeile {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.kontakt-text {
+  flex: 1 1 260px; /* die Linie unter "Contact" reicht bis zur Sprechblase */
+}
+
+.maskottchen {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto; /* nach rechts rücken */
+}
+
+.rahmen-klein {
+  padding: 7px;
+  border-radius: 26px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.20) 35%, rgba(255, 255, 255, 0.10) 65%, rgba(255, 255, 255, 0.45) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 8px 20px rgba(0, 15, 70, 0.45),
+    inset 0 2px 0 rgba(255, 255, 255, 0.90),
+    inset 0 -2px 0 rgba(255, 255, 255, 0.30),
+    inset 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+.rahmen-klein {
+  position: relative;
+}
+
+/* Glanzstreifen über dem Eichhörnchen-Bild: läuft, sobald die Seite ganz unten angekommen ist
+   (Klasse .glanz setzt das Skript in index.html), gleiche Bewegung wie beim Titel */
+.rahmen-klein::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(105deg, transparent 0%, transparent 40%, rgba(255, 255, 255, 0.75) 50%, transparent 60%, transparent 100%) 125% 0 / 250% 100% no-repeat; /* Ruhezustand: Streifen ganz links außerhalb */
+  pointer-events: none;
+}
+
+.rahmen-klein.glanz::after {
+  animation: rahmen-glanz 0.8s linear 0s 1 both;
+}
+
+/* Eigene Keyframes für das Eichhörnchen-Bild (statt titel-shine). Der Streifen ist schräg (105deg),
+   deshalb ragt seine Spitze noch ein Stück in den Rahmen, wenn er nur bis 0 %/100 % läuft.
+   Start/Ende liegen darum bei 125 % bzw. Wendepunkt bei -25 %: dort steht er sicher komplett außerhalb.
+   Der Ruhezustand (ohne Animation) ist derselbe Wert, es bleibt also nie ein Rest sichtbar. */
+/* Nur EIN Durchlauf: von rechts nach links und sofort wieder zurück nach rechts. */
+@keyframes rahmen-glanz {
+  0%   { background-position: -25% 0; }
+  50%  { background-position: 125% 0; }
+  100% { background-position: -25% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rahmen-klein.glanz::after {
+    animation: none;
+  }
+}
+
+.rahmen-klein img {
+  display: block;
+  width: 100px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.55), 0 2px 6px rgba(0, 15, 70, 0.35);
+}
+
+.sprechblase {
+  position: relative;
+  max-width: 190px;
+  padding: 10px 16px;
+  border: 2px solid #1f6f9f;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #0b2a55;
+  text-shadow: none;
+  font-size: 0.95em;
+  line-height: 1.3;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0, 15, 70, 0.35);
+}
+
+/* Zipfel der Sprechblase, zeigt auf das Eichhörnchen */
+.sprechblase::after {
+  content: "";
+  position: absolute;
+  right: -9px;
+  top: calc(50% - 8px);
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border-top: 2px solid #1f6f9f;
+  border-right: 2px solid #1f6f9f;
+  transform: rotate(45deg);
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Sanftes Einblenden beim Scrollen (einmalig)                         */
+/* ------------------------------------------------------------------ */
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .reveal.sichtbar {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+
+/* ------------------------------------------------------------------ */
+/* Titelbereich: Glaskarte + Comic-Schriftzug passend zum Rest         */
+/* ------------------------------------------------------------------ */
+
+.hero {
+  position: relative;
+  overflow: hidden; /* das große "ACCT" im Hintergrund wird am Kartenrand abgeschnitten */
+  margin-top: 28px;
+  padding: 22px 28px 26px;
+  text-align: center;
+}
+
+/* Großes, halbtransparentes "ACCT" als Wasserzeichen hinter Titel und Untertitel.
+   Deckkraft: die 0.09 / 0.17 ändern. Größe: font-size. */
+.hero::before {
+  content: "ACCT";
+  position: absolute;
+  left: 50%;
+  top: var(--wm-top, 50%);
+  transform: translate(-50%, var(--wm-ty, -39%)); /* Größe und Lage setzt das kleine Skript in index.html exakt */
+  z-index: 0;
+  font-family: 'Lumanosimo', cursive;
+  font-size: var(--wm-size, clamp(9rem, 26vw, 13rem));
+  line-height: 1;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.09);
+  -webkit-text-stroke: 6px rgba(255, 255, 255, 0.17);
+  paint-order: stroke fill;
+  text-shadow: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero h1,
+.hero h2 {
+  position: relative;
+  z-index: 1; /* Titel und Untertitel liegen vor dem Wasserzeichen */
+}
+
+.hero h1 {
+  margin: 0;
+  color: #e2f4ff; /* leicht bläulich, damit der weiße Glanz sichtbar bleibt */
+  /* weiße Schrift; die Outline mit Farbverlauf liegt in .hero h1::before dahinter */
+  letter-spacing: 0.02em;
+}
+
+.hero h1::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* Outline: Dicke = Strichstärke (die Hälfte davon ragt über die weiße Schrift hinaus).
+     Farbverlauf von Dunkelblau (oben) nach Hellblau (unten). */
+  color: transparent;
+  -webkit-text-stroke: 8px transparent;
+  background: linear-gradient(180deg, #0a1f5c 0%, #1f5fc0 45%, #8fd8ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 8px 10px rgba(0, 15, 70, 0.55));
+  letter-spacing: inherit;
+  pointer-events: none;
+}
+
+.hero h1::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  /* Glanzstreifen: läuft schräg durch Schrift und Outline */
+  color: transparent;
+  -webkit-text-stroke: 8px transparent;
+  background: linear-gradient(105deg, transparent 0%, transparent 40%, rgba(255, 255, 255, 0.95) 50%, transparent 60%, transparent 100%) 150% 0 / 250% 100% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  letter-spacing: inherit;
+  pointer-events: none;
+  animation: titel-shine 1.3s linear 0.6s 1 both; /* einmal beim Seitenaufruf, Start nach 0,6 s */
+}
+
+/* 0,65 s links -> rechts, ohne Pause sofort 0,65 s rechts -> links (Gesamt 1,3 s), gleichmäßiges Tempo.
+   Der Streifen läuft rechts KOMPLETT aus dem Text heraus (0 %: Streifenmitte ca. 1,25 Textbreiten
+   vom linken Rand, die Streifenkante inkl. Schräge liegt sicher außerhalb), bevor er wieder nach links läuft. */
+@keyframes titel-shine {
+  0%    { background-position: 85% 0; }
+  50%   { background-position: 0% 0; }
+  100%  { background-position: 85% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1::after {
+    animation: none;
+    display: none;
+  }
+}
+
+.hero h2 {
+  margin: 10px 0 0;
+  padding: 0;
+  border: 0;
+  font-size: 1.85em; /* vorher 1.35em, dann 1.6em */
+  color: #e6f6ff;
+}
+
+/* feine Glanzlinie zwischen Titel und Untertitel */
+.hero h2::before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  margin: 0 auto 12px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, transparent, #bfe8fb, transparent);
+}
+
+/* Outline um den Untertitel wie beim Titel (.hero h1::before), nur dünner (4 px statt 8 px)
+   und mit umgekehrtem Farbverlauf: Hellblau (oben) -> Dunkelblau (unten). */
+.hero h2 .umriss {
+  position: relative;
+  display: inline-block;
+}
+
+.hero h2 .umriss::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: transparent;
+  -webkit-text-stroke: 4px transparent;
+  background: linear-gradient(180deg, #8fd8ff 0%, #1f5fc0 55%, #0a1f5c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 4px 6px rgba(0, 15, 70, 0.55));
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2em;
+  }
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Handy (Android, Chrome/Edge): Schrift lesbar, mehr Platz im Text,   */
+/* Sprechblase wird neben dem Eichhörnchen nicht mehr zerquetscht      */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .karte {
+    width: 100%;
+    margin: 16px auto;
+    padding: 12px 16px 18px;
+    border-width: 12px;
+    border-radius: 30px;
+  }
+
+  .shot {
+    width: 100%;
+    margin: 18px auto;
+  }
+
+  .maskottchen {
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .sprechblase {
+    flex: 1 1 8em; /* nimmt den Platz neben dem Bild, bricht nie mitten im Wort */
+    max-width: none;
+    min-width: 0;
+  }
+
+  .rahmen-klein {
+    flex: 0 0 auto;
+  }
+
+  .rahmen-klein img {
+    width: 88px;
+  }
+
+  a.download-link {
+    font-size: 1.2em;
+    gap: 10px;
+  }
+}
+
+
+/* ------------------------------------------------------------------ */
+/* "Up we go!" - Back-to-top-Sprechblase am Seitenende                 */
+/* ------------------------------------------------------------------ */
+
+.nach-oben-zeile {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.nach-oben {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #1f6f9f;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #0b2a55;
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: none;
+  text-shadow: none;
+  box-shadow: 0 6px 14px rgba(0, 15, 70, 0.35);
+  transform-origin: 50% 100%;
+}
+
+/* Zipfel nach oben (zeigt Richtung Seitenanfang) */
+.nach-oben::after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 8px);
+  top: -9px;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border-top: 2px solid #1f6f9f;
+  border-left: 2px solid #1f6f9f;
+  transform: rotate(45deg);
+}
+
+.nach-oben:hover,
+.nach-oben:focus-visible {
+  animation: nach-oben-wackeln 0.5s ease-in-out;
+}
+
+@keyframes nach-oben-wackeln {
+  0%   { transform: rotate(0deg); }
+  15%  { transform: rotate(-7deg) translateY(-2px); }
+  30%  { transform: rotate(6deg) translateY(-2px); }
+  45%  { transform: rotate(-5deg); }
+  60%  { transform: rotate(4deg); }
+  75%  { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nach-oben:hover,
+  .nach-oben:focus-visible {
+    animation: none;
+  }
+}

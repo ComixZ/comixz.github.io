@@ -4,149 +4,355 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+ 
     <!-- Google Search Console Verifikation -->
     <meta name="google-site-verification" content="mg1lO8U7OeHvnRUdLeWcUprtxGNMlcH7f46Z-f9PWr4" />
-
+ 
     <!-- SEO Meta Tags -->
-    <title>Anti-Comic-Chaos-Tool (ACCT) – Free Portable Comic Collection Software</title>
+    <title>Anti-Comic-Chaos-Tool – Free Comic Collection Software</title>
     <meta name="description" content="Free, portable Windows desktop app to catalog your comic, manga, and graphic novel collection. No installation, no subscription, no cloud required.">
     <meta name="keywords" content="comic collection software, comic database software, comic cataloging software, comic collection manager, manga collection tracker, graphic novel organizer, comic book inventory software, free comic collection software, portable comic software, offline comic manager">
     <meta name="author" content="ComixZ">
     <link rel="canonical" href="https://comixz.github.io/" />
-
+ 
     <!-- Open Graph / Social Media (Facebook, Discord, LinkedIn) -->
     <meta property="og:title" content="Anti-Comic-Chaos-Tool (ACCT)" />
     <meta property="og:description" content="Free, portable Windows app to catalog your comic, manga, and graphic novel collection — no installation, no subscription, no cloud required." />
     <meta property="og:url" content="https://comixz.github.io/" />
     <meta property="og:site_name" content="Anti-Comic-Chaos-Tool" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://comixz.github.io/screen01.avif" />
+    <meta property="og:image" content="https://comixz.github.io/acct-comic-collection-software-main-window.jpg" />
+    <meta property="og:image:width" content="1366" />
+    <meta property="og:image:height" content="721" />
+    <meta property="og:image:alt" content="Anti-Comic-Chaos-Tool main window: comic collection list with covers and collection status counters" />
     <meta property="og:locale" content="en_US" />
-
+ 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Anti-Comic-Chaos-Tool (ACCT)" />
     <meta name="twitter:description" content="Free, portable Windows app to catalog your comic, manga, and graphic novel collection — no installation, no subscription, no cloud required." />
-    <meta name="twitter:image" content="https://comixz.github.io/screen01.avif" />
-
+    <meta name="twitter:image" content="https://comixz.github.io/acct-comic-collection-software-main-window.jpg" />
+ 
     <!-- Erweitertes Schema.org (SoftwareApplication) für Google Rich Results -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Anti-Comic-Chaos-Tool",
-      "alternateName": "ACCT",
-      "operatingSystem": "Windows 10, Windows 11",
-      "applicationCategory": "DatabaseApplication",
-      "browserRequirements": "Requires Windows 64-bit",
-      "softwareVersion": "1.10.2026",
-      "url": "https://comixz.github.io/",
-      "image": "https://comixz.github.io/screen01.avif",
-      "description": "Free, portable Windows app to catalog your comic, manga, and graphic novel collection — no installation, no subscription, no cloud required.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "ComixZ"
-      }
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Anti-Comic-Chaos-Tool",
+  "alternateName": "ACCT",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "DatabaseApplication",
+  "browserRequirements": "Requires Windows 64-bit",
+  "softwareVersion": "1.11.2026",
+  "url": "https://comixz.github.io/",
+  "downloadUrl": "https://github.com/ComixZ/Anti-Comic-Chaos-Tool/releases/latest",
+  "image": "https://comixz.github.io/acct-comic-collection-software-main-window.jpg",
+  "screenshot": [
+    "https://comixz.github.io/acct-comic-collection-software-main-window.jpg",
+    "https://comixz.github.io/acct-comic-database-edit-comic.jpg",
+    "https://comixz.github.io/acct-comic-cover-zoom-viewer.jpg",
+    "https://comixz.github.io/acct-comic-collection-check-duplicate-covers.jpg"
+  ],
+  "description": "Free, portable Windows app to catalog your comic, manga, and graphic novel collection — no installation, no subscription, no cloud required.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "ComixZ"
+  }
+}
+</script>
+ 
 
-    <link rel="stylesheet" href="acct.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap');</style>
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap">
+    <link rel="stylesheet" href="acct_index.css">
   </head>
   <body>
   
-      <br>
-      <h1 style="text-align: center;">Anti-Comic-Chaos-Tool</h1>
-      <h2 style="text-align: center;">Comic collection database, built to keep you organized.</h2>
-      <br>
+      <section class="karte hero">
+        <h1 data-text="Anti-Comic-Chaos-Tool">Anti-Comic-Chaos-Tool</h1>
+        <h2><span class="umriss" data-text="Tame your comic collection.">Tame your comic collection.</span></h2>
+      </section>
 
       <!-- Screenshots mit optimierten alt-Attributen für Google Bildersuche -->
-      <p><img src="https://comixz.github.io/screen01.avif" alt="Anti-Comic-Chaos-Tool - Main Interface for Comic Cataloging" style="display: block; margin-left: auto; margin-right: auto; width: 90%; height: auto; border: 2px solid #000; border-radius: 30px;"/></p>
+      <div class="shot reveal"><img src="https://comixz.github.io/acct-comic-collection-software-main-window.jpg" alt="Anti-Comic-Chaos-Tool main window: comic collection list with front and back covers, grouped series and collection status counters"></div>
 
-      <p><strong>Bring order to your comic, manga, and graphic novel collection – no installation, no subscription, no cloud required.</strong></p>
+      <section class="karte reveal">
+<p><strong>Bring order to your comic, manga, and graphic novel collection – no installation, no subscription, no cloud required.</strong></p>
+      <p>Anti-Comic-Chaos-Tool (ACCT) is a lightweight, portable desktop application that keeps precise track of which comics, manga, single issues, and collected editions you already own. Whether you have 10 volumes or thousands of items, it gives you the overview that a spreadsheet or your memory eventually can’t. And unlike collection software made for stamps or books, ACCT understands the quirks of comics.</p>
+	  <p>A proper desktop program in delightfully quirky, old-school style, but with a modern engine, and it’s proud of it. No mobile app, no swipe, no pinch-to-zoom, no “tap here to rate us”. It runs on a real computer, with a big monitor, a real mouse, a real keyboard, a cup of coffee, and windows that stay exactly where you put them.</p>
+	  </section>
 
-      <p>Anti-Comic-Chaos-Tool is a lightweight, portable desktop application that keeps precise track of which comics, mangas, issues, and collected editions you already own. Whether it’s 10 volumes or a collection with thousands of items: ACCT keeps the overview that a spreadsheet or your memory eventually can’t handle anymore.</p>
-
-      <hr />
-
-      <h2>✨ Why ACCT?</h2>
+      <section class="karte reveal">
+<h2><span class="emoji">✨</span> Why choose ACCT as your comic collection manager?</h2>
 
       <ul>
-        <li><strong>No installation required</strong> – one folder, one .exe. Just launch it and it works. Copied to a USB stick, your entire collection keeps running on any other PC too.</li>
-        <li><strong>Completely free, no ads, no tracking</strong> – licensed under the PolyForm Noncommercial License, free to use without restriction for private use.</li>
+        <li><strong>No installation required</strong> – one folder, one .exe. Just launch it and it works. Copy it to a USB stick and your entire collection runs on any other PC too.</li>
+        <li><strong>Completely free, no ads, no tracking</strong> – licensed under the PolyForm Noncommercial License, free for any non-commercial use.</li>
         <li><strong>Works offline</strong> – no registration, no mandatory cloud usage, and no internet connection required for ACCT (except for optional comic web searches and optional plugins).</li>
-      	<li><strong>Web Import</strong> – searches the web for data and cover art for your comics. (Currently only for German comics).</li>
-		<li><strong>Built for the quirks of comic collections</strong> - not generic inventory lists.</li>
+      	<li><strong>Web Import</strong> – searches the web for data and cover art for your comics. (Currently only for German comics.)</li>
+		<li><strong>Built for the quirks of comic collections</strong> – not generic inventory lists.</li>
         <li><strong>Collected editions</strong> – thick omnibus volumes cleanly linked to the individual issues they contain.</li>
         <li><strong>Anthologies</strong> – multiple stories by different artists/writers within one issue, tracked individually.</li>
         <li><strong>Special editions</strong> – do you have comics with variant covers, limited editions, or prints? Simply add them.</li>
-        <li><strong>Groups</strong> – bundle series and spin-offs together, including custom images for slipcases, characters, and artwork.</li>
-        <li><strong>Batch creation</strong> – add ten, twenty, a hundred issues of a series with individual covers in one go instead of typing them in one by one.</li>
-        <li><strong>Modern image formats</strong> – PNG, JPG, WebP, BMP, GIF, TIFF and AVIF.</li>
+        <li><strong>Previews</strong> – always a quick look at the best pages, or even all of them <span style="display: inline-block; transform: rotate(90deg);">; )</span></li>
+		<li><strong>Groups</strong> – bundle series and spin-offs together, including custom images for slipcases, characters, and artwork.</li>
+        <li><strong>Batch creation</strong> – add ten, twenty, or a hundred issues of a series with individual covers in one go instead of typing them in one by one.</li>
+        <li><strong>Modern image formats</strong> – PNG, JPG, WebP, BMP, GIF, TIFF, and AVIF.</li>
         <li><strong>Self-cleaning collection</strong> – built-in tools find orphaned cover files and duplicates (via image similarity detection, not just filename matching) and automatically repair missing thumbnails.</li>
         <li><strong>Import &amp; export between databases</strong> – move or copy comics between collections as needed, including automatic duplicate detection.</li>
         <li><strong>Fast to search &amp; filter</strong> – full-text search, color-coding by collection status, sortable series overview.</li>
-        <li><strong>Backup</strong> - safety first.</li>
-        <li><strong>Accesories</strong> - does your collection also include slipcases, figures, prints, and posters? You can manage those too.</li>
-        <li><strong>CBR/CBZ</strong> - add covers from comic archives.</li>
-        <li><strong>PDF</strong> - add covers from PDF comics. This is optional and can be downloaded separately as a plugin.</li>
-        <li><strong>Upscale</strong> - enlarge and improve the image quality of your covers with AI. This is optional and can be downloaded separately as a plugin.</li>
-        <li><strong>Watermark Eraser</strong> - remove distracting watermarks or price stickers with AI. This is optional and can be downloaded separately as a plugin.</li>
-      </ul>
+        <li><strong>Backup</strong> – safety first.</li>
+        <li><strong>Accessories</strong> – does your collection also include slipcases, figures, prints, and posters? You can manage those too.</li>
+        <li><strong>CBR/CBZ</strong> – add covers from comic archives.</li>
+        <li><strong>PDF</strong> – add covers from PDF comics. This is optional and can be downloaded separately as a plugin.</li>
+        <li><strong>Upscale</strong> – enlarge and improve the image quality of your covers with AI. This is optional and can be downloaded separately as a plugin.</li>
+        <li><strong>Watermark Eraser</strong> – remove distracting watermarks or price stickers with AI. This is optional and can be downloaded separately as a plugin.</li>
+        <li><strong>Share your comics</strong> – optionally back up your data online, access it from anywhere, or share it with friends and the community.</li>
+	  </ul>
 
-      <hr />
-      <p><img src="https://comixz.github.io/screen02.avif" alt="ACCT - Collection Management and Details View" style="display: block; margin-left: auto; margin-right: auto; width: 90%; height: auto; border: 2px solid #000; border-radius: 30px;"/></p>
+      </section>
+      <div class="shot reveal"><img src="https://comixz.github.io/acct-comic-cover-zoom-viewer.jpg" alt="ACCT comic cover viewer: zoom into a comic cover in full detail, with pan and close controls" loading="lazy"></div>
 
-      <h2>👽 Who is this for?</h2>
+    
 
-      <p>For anyone who wants to keep track of their physical (or digital) comic/manga/graphic novel collection without signing up for a subscription, uploading their data to someone else’s cloud, or making do with collection software designed for stamps or books that doesn’t understand the quirks of comics.</p>
-
-      <hr />
-
-      <h2>📦 Getting started</h2>
+      <section class="karte reveal">
+<h2><span class="emoji">📦</span> Getting started</h2>
 
       <ol>
         <li>Download the latest release</li>
-        <li>Unzip – acct.exe , comic.ini , and the corresponding DB_* folder must stay in the same directory</li>
+        <li>Unzip – acct.exe, comic.ini, and the corresponding DB_* folder must stay in the same directory</li>
         <li>Launch – done</li>
       </ol>
 
       <p>No admin rights, no installer, no registry entries.</p>
 
-      <hr />
+      </section>
 
-      <h2>⬇️ <a href="https://github.com/ComixZ/Anti-Comic-Chaos-Tool/releases/latest">Download latest release (v1.10.2026) on Github</a></h2>
+      <section class="karte reveal">
+<div class="download-bereich">
+        <a class="download-link" href="https://github.com/ComixZ/Anti-Comic-Chaos-Tool/releases/latest">
+          <svg class="zip-icon" viewBox="0 0 40 48" width="40" height="48" aria-hidden="true" focusable="false"><path d="M4 2h22l10 10v34H4z" fill="#fff" stroke="#000" stroke-width="2.5" stroke-linejoin="round"/><path d="M26 2v10h10" fill="#8fd0f2" stroke="#000" stroke-width="2.5" stroke-linejoin="round"/><text x="20" y="36" font-size="10" text-anchor="middle" fill="#0b2a55" font-family="Lumanosimo, cursive">.zip</text></svg>
+          <span class="download-text">Download v1.11.2026 on GitHub <span class="pfeil" aria-hidden="true"><svg viewBox="0 0 40 24" width="40" height="24" focusable="false"><path d="M4 12H35M25 3l10 9-10 9" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        </a>
+        <p class="download-meta">Free · portable · Windows 10/11 · no installer</p>
+     </div>
 
-      <hr />
+      </section>
 
-      <h2>🖥️ System requirements</h2>
+      <section class="karte reveal">
+<h2><span class="emoji">🖥️</span> System requirements</h2>
 
       <ul>
         <li><strong>Windows 10 or Windows 11</strong> (64-bit)</li>
+	    <li><strong>Disk space:</strong> 27 MB for the main program, 193 MB for optional AI plugins.</li>
+        <li><strong>Any ordinary PC:</strong> no special hardware needed for the main program.</li>
+		<li><strong>Graphics card:</strong> optional AI plugins (Upscale, Watermark Eraser): a graphics card is not required. They use any DirectX 12 capable GPU (NVIDIA, AMD or Intel) if available and automatically fall back to the CPU otherwise – just sloooooower.</li>
       </ul>
 
-      <hr />
-      <p><img src="https://comixz.github.io/screen03.avif" alt="Anti-Comic-Chaos-Tool - Search and Filter Options" style="display: block; margin-left: auto; margin-right: auto; width: 90%; height: auto; border: 2px solid #000; border-radius: 30px;"/></p>
+      </section>
+      <div class="shot reveal"><img src="https://comixz.github.io/acct-comic-database-edit-comic.jpg" alt="ACCT comic database: edit comic dialog with cover price, condition, ownership status and AI cover upscale" loading="lazy"></div>
 
-      <h2>🔧 Development</h2>
-      <ul><li>ACCT was first released in August 2026 and is undergoing continuous development. A new, revised version is released every one to two months, for as long as I have the time and inclination.</li></ul>
-      <hr />
 
-      <h2>💬 Feedback</h2>
-      <ul><li>Feedback is always welcome — what works well, what could be improved, and which features you’d like to see next. Or is it all just junk after all? &nbsp;
+  <section class="karte reveal">
+<h2><span class="emoji">💐</span> Credits</h2>
+      <ul>
+	  <li>Watermark Remover Plugin:<br>
+	  Model: MI-GAN (ICCV 2023), Picsart AI Research (Andranik Sargsyan and others)<br>
+	  Project: https://github.com/Picsart-AI-Research/MI-GAN<br>
+	  ONNX export used by ACCT: migan_pipeline_v2.onnx<br>
+	  andraniksargsyan at https://huggingface.co/andraniksargsyan/migan
+	  </li>
+	  
+	  
+	  <li>Upscale Plugin: <br>
+	  Model: Real-ESRGAN (x2plus and x4plus). Created by Xintao Wang, Liangbin Xie, and others (Tencent ARC Lab)<br>
+	  Project: https://github.com/xinntao/Real-ESRGAN<br>
+	  ONNX exports used by ACCT: RealESRGAN_x2plus.onnx and RealESRGAN_x4plus.onnx<br>
+	  SceneWorks at https://huggingface.co/SceneWorks/real-esrgan-onnx<br>
+	  </li>
+	  </ul>
+      </section>
+
+
+
+      <section class="karte reveal">
+<h2><span class="emoji">🔧</span> Development</h2>
+      <ul>
+	  <li>ACCT is written in Rust using the egui GUI library (0.37.0). It was first released in August 2026 and is under continuous development. A new, revised version is released every one to two months, for as long as I have the time and inclination. Updates are always cumulative and backward compatible. So don’t worry, new features won’t break your database! Oh wait, there’s more … Bugs are just features with zero followers.</li>
+	  </ul>
+      </section>
+
+      <section class="karte reveal">
+<h2><span class="emoji">💬</span> Feedback</h2>
+      <ul><li>Your feedback is pure gold: tell me what rocks, what sucks, and what’s still missing. Love it, hate it, or think it’s all junk? Go ahead, the bugs and the zombie squirrel have thick skin. (Almost.)&nbsp;
 	   <span class="growing-word"><span>Y</span><span>o</span><span>u</span><span>&nbsp;</span><span>c</span><span>a</span><span>n</span><span>&nbsp;</span><span>h</span><span>e</span><span>l</span><span>p</span><span>&nbsp;</span><span>m</span><span>e</span><span>&nbsp;</span></span>
-	     further improve ACCT.</li></ul>
-      <hr />
+	     make ACCT better with every update.</li></ul>
+      </section>
 
-      <h2>📢 Contact</h2>
-      <ul><li>comixz@tuta.io</li></ul>
-      <br><br>
+      <div class="shot reveal"><img src="https://comixz.github.io/acct-comic-collection-check-duplicate-covers.jpg" alt="ACCT comic collection software: check covers dialog to find duplicate covers, unused cover files and comics without a cover, next to the layout settings" loading="lazy"></div>
 
+
+ <section class="karte reveal">
+<h2><span class="emoji">📜</span> License</h2>
+      <ul>
+	  <li>ACCT is free to use for any non-commercial purpose, for example managing your own collection, hobby use, or sharing with friends. You may copy and redistribute it as long as you include this license notice. Commercial use is not permitted.</li>
+	  	  <li>Licensed under the PolyForm Noncommercial License 1.0.0</li>
+	  </ul>
+      </section>
+
+
+
+ <section class="karte reveal">
+<h2><span class="emoji">⚖️</span> Disclaimer</h2>
+      <ul>
+	  <li>This software is provided “as is”, without warranty of any kind. To the extent permitted by law, the author accepts no liability for data loss or corruption, damage to your system or hardware, or any direct, indirect, or consequential damages arising from the use of this software.</li>
+	  	  <li>Some functions (for example image compression, upscaling and watermark removal) replace existing image files, and this cannot be undone. Use is at your own risk. Please back up your data before use.</li>
+	  </ul>
+      </section>
+
+
+
+
+
+
+    <section class="karte reveal">
+<h2><span class="emoji">🔨</span> In progress</h2>
+
+      <ul>
+        <li><strong>Spine</strong> – admire all matching book spines as one complete work</li>
+        <li><strong>Export</strong> – HTML, PDF, CSV</li>
+        <li><strong>Your ideas</strong> – tell me what’s missing</li>
+
+	  </ul>
+      </section>
+
+
+
+
+
+
+
+	  
+	  
+	  <section class="karte kontakt reveal">
+        <div class="kontakt-zeile">
+          <div class="kontakt-text">
+            <h2><span class="emoji">📢</span> Contact</h2>
+            <ul><li>comixz@tuta.io</li></ul>
+          </div>
+          <div class="maskottchen">
+            <div class="sprechblase">Questions? Bugs? Ideas?</div>
+            <div class="rahmen-klein"><img src="https://comixz.github.io/comixz_logo.png" alt="ComixZ" loading="lazy"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Back to top: Sprechblase im Comic-Stil, wackelt beim Darüberfahren -->
+      <div class="nach-oben-zeile">
+        <a class="nach-oben" href="#" aria-label="Back to top">Up we go!</a>
+      </div>
+<br><br>
+	  
+	  
+
+
+
+  <script>
+    // Karten und Screenshots erscheinen einmalig sanft von unten, sobald sie ins Bild kommen.
+    // Ohne JavaScript oder mit "Bewegung reduzieren" im System sind sie sofort sichtbar.
+    (function () {
+      var elemente = document.querySelectorAll('.reveal');
+      var reduziert = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduziert || !('IntersectionObserver' in window)) {
+        elemente.forEach(function (e) { e.classList.add('sichtbar'); });
+        return;
+      }
+      var beobachter = new IntersectionObserver(function (eintraege) {
+        eintraege.forEach(function (eintrag) {
+          if (eintrag.isIntersecting) {
+            eintrag.target.classList.add('sichtbar');
+            beobachter.unobserve(eintrag.target);
+          }
+        });
+      }, { threshold: 0.05 });
+      elemente.forEach(function (e) { beobachter.observe(e); });
+    })();
+  </script>
+
+  <script>
+    // "ACCT" im Titelkasten: Höhe exakt an die Karte anpassen (ca. 3 px Abstand oben und unten, mittig; ABSTAND fein justieren).
+    // Ist die Karte zu schmal (Handy), wird die Schrift so verkleinert, dass sie in die Breite passt.
+    (function () {
+      var ABSTAND = 3, KONTUR = 6, SPACING = 0.06;
+      function anpassen() {
+        var hero = document.querySelector('.hero');
+        if (!hero) return;
+        var c = document.createElement('canvas').getContext('2d');
+        c.font = "100px 'Lumanosimo', cursive";
+        var m = c.measureText('ACCT');
+        if (!m.actualBoundingBoxAscent) return;
+        var asc = m.actualBoundingBoxAscent, desc = m.actualBoundingBoxDescent;
+        var fa = m.fontBoundingBoxAscent, fd = m.fontBoundingBoxDescent;
+        var breite = m.width + 4 * SPACING * 100;
+        var H = hero.clientHeight, B = hero.clientWidth;
+        var F = Math.min((H - 2 * ABSTAND - KONTUR) / (asc + desc) * 100,
+                         (B - 2 * ABSTAND - KONTUR) / breite * 100);
+        var s = F / 100;
+        var gesamt = (asc + desc) * s + KONTUR;
+        var tintenOben = (H - gesamt) / 2 + KONTUR / 2;
+        var grundlinie = (F - (fa + fd) * s) / 2 + fa * s;
+        hero.style.setProperty('--wm-size', F.toFixed(1) + 'px');
+        hero.style.setProperty('--wm-top', (tintenOben - (grundlinie - asc * s)).toFixed(1) + 'px');
+        hero.style.setProperty('--wm-ty', '0px');
+      }
+      var los = function () { anpassen(); };
+      if (document.fonts && document.fonts.load) {
+        document.fonts.load("100px 'Lumanosimo'").then(los, los);
+      }
+      window.addEventListener('load', los);
+      window.addEventListener('resize', los);
+      los();
+    })();
+  </script>
+
+  <script>
+    // "Up we go!": sanft nach oben scrollen (ohne Animation bei "Bewegung reduzieren").
+    (function () {
+      var link = document.querySelector('.nach-oben');
+      if (!link) return;
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var reduziert = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduziert ? 'auto' : 'smooth' });
+      });
+    })();
+  </script>
+
+  <script>
+    // Glanzstreifen über dem Eichhörnchen, sobald die Seite ganz nach unten gescrollt ist.
+    // Läuft nur EINMAL pro Seitenaufruf (links -> rechts), beim ersten Ankommen ganz unten.
+    (function () {
+      var bild = document.querySelector('.rahmen-klein');
+      if (!bild) return;
+      function pruefen() {
+        var restweg = document.documentElement.scrollHeight - (window.scrollY + window.innerHeight);
+        if (restweg <= 4) {
+          bild.classList.add('glanz');
+          window.removeEventListener('scroll', pruefen);
+          window.removeEventListener('resize', pruefen);
+        }
+      }
+      window.addEventListener('scroll', pruefen, { passive: true });
+      window.addEventListener('resize', pruefen);
+    })();
+  </script>
   </body>
 </html>
